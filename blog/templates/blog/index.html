@@ -1,0 +1,48 @@
+{% extends 'jprice/base.html' %}
+{% load markdown static %}
+
+{% block title_prefix %}Blog | {% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2>Posts</h2>
+
+<form class="blogList__searchForm" action="{% url 'blog:index' %}" method="get">
+  <input class="jp-input" id="search" name="search" placeholder="Search" type="text" value="{{search_param}}" />
+  <select class="jp-input" id="topic" name="topic">
+    <option value="">All</option>
+    {% for topic in topics %}
+    {% if topic.slug == topic_param %}
+    <option value="{{topic.slug}}" selected>{{topic.name}}</option>
+    {% else %}
+    <option value="{{topic.slug}}">{{topic.name}}</option>
+    {% endif %}
+    {% endfor %}
+  </select>
+  <button class="jp-button raised" type="submit">Search</button>
+</form>
+
+{% if posts %}
+<div class="blogList__posts">
+  {% for post in posts %}
+  <div class="blogList__post">
+    <p class="blogList__post__publishedAt">{{post.published_at | date:"M d, Y"}}</p>
+    <a class="blogList__post__title" href="{% url 'blog:detail' post.slug %}">{{post.title}}</a>
+    <p class="blogList__post__content">{{ post.content | unmarkdown | truncatewords:60 }}</p>
+    <div class="blogList__post__tags">
+      {% for topic in post.topics.all %}
+      <a class="jp-badge" href="{% url 'blog:index' %}?topic={{topic.slug}}">{{topic.name}}</a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>No post matches the given query.</p>
+{% endif %}
+
+{% endblock %}

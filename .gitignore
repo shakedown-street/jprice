@@ -1,0 +1,12 @@
+### Python
+__pycache__
+
+### Sqlite
+*.sqlite3
+
+### Testing
+.coverage
+htmlcov
+
+### Virtual environment
+venv

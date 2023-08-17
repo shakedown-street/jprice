@@ -1,0 +1,22 @@
+.contact-form {
+  background-color: var(--gray-0);
+  border: 1px solid var(--gray-4);
+  border-radius: 4px;
+  padding: 1rem;
+  max-width: 384px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .jp-input {
+  width: 100%;
+}
+
+.contact-form .jp-button[type="submit"] {
+  width: 100%;
+}
