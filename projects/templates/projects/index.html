@@ -1,0 +1,39 @@
+{% extends 'jprice/base.html' %}
+{% load markdown static %}
+
+{% block title_prefix %}Projects | {% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'projects/projects.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2>Projects</h2>
+
+{% if projects %}
+{% for project in projects %}
+<div>
+  <h3>{{project.name}}</h3>
+  {% if project.image %}
+  <img src="{{project.image.url}}" />
+  {% endif %}
+  <p>{{project.description | markdown | safe}}</p>
+
+  {% for technology in project.technologies.all %}
+  <div class="jp-badge">{{technology.name}}</div>
+  {% endfor %}
+
+  {% if project.github_url %}
+  <a class="jp-button" href="{{project.github_url}}" target="_blank">GitHub</a>
+  {% endif %}
+  {% if project.website_url %}
+  <a class="jp-button" href="{{project.website_url}}" target="_blank">Website</a>
+  {% endif %}
+</div>
+{% endfor %}
+{% else %}
+<p>No project matches the given query.</p>
+{% endif %}
+
+{% endblock %}
