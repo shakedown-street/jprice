@@ -1,5 +1,7 @@
+from django import forms
 from django.contrib import admin
 
+from blog.widgets import MarkdownEditor
 from .models import Technology, Project
 
 
@@ -19,8 +21,17 @@ class TechnologyAdmin(admin.ModelAdmin):
     }
 
 
+class ProjectAdminForm(forms.ModelForm):
+    model = Project
+
+    class Meta:
+        fields = "__all__"
+        widgets = {"description": MarkdownEditor()}
+
+
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+    form = ProjectAdminForm
     list_display = [
         "name",
         "slug",

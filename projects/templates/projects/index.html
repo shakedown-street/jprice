@@ -12,26 +12,35 @@
 <h2>Projects</h2>
 
 {% if projects %}
-{% for project in projects %}
-<div>
-  <h3>{{project.name}}</h3>
-  {% if project.image %}
-  <img src="{{project.image.url}}" />
-  {% endif %}
-  <p>{{project.description | markdown | safe}}</p>
-
-  {% for technology in project.technologies.all %}
-  <div class="jp-badge">{{technology.name}}</div>
+<div class="projectList">
+  {% for project in projects %}
+  <div class="projectList__project">
+    <div class="projectList__project__detail">
+      <a class="projectList__project__name" href="{% url 'projects:detail' project.slug %}">{{project.name}}</a>
+      <p class="projectList__project__tagline">{{project.tagline}}</p>
+      <p class="projectList__project__description">{{ project.description | unmarkdown | truncatewords:60 }}</p>
+      <div class="projectList__project__techList">
+        {% for technology in project.technologies.all %}
+        <div class="jp-badge">{{technology.name}}</div>
+        {% endfor %}
+      </div>
+      <div class="projectList__project__links">
+        {% if project.github_url %}
+        <a class="jp-button outlined" href="{{project.github_url}}" target="_blank">GitHub</a>
+        {% endif %}
+        {% if project.website_url %}
+        <a class="jp-button outlined" href="{{project.website_url}}" target="_blank">Website</a>
+        {% endif %}
+      </div>
+    </div>
+    {% if project.image %}
+    <div class="projectList__project__imageContainer">
+      <img class="projectList__project__image" src="{{project.image.url}}" />
+    </div>
+    {% endif %}
+  </div>
   {% endfor %}
-
-  {% if project.github_url %}
-  <a class="jp-button" href="{{project.github_url}}" target="_blank">GitHub</a>
-  {% endif %}
-  {% if project.website_url %}
-  <a class="jp-button" href="{{project.website_url}}" target="_blank">Website</a>
-  {% endif %}
 </div>
-{% endfor %}
 {% else %}
 <p>No project matches the given query.</p>
 {% endif %}

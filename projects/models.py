@@ -27,11 +27,17 @@ def project_image_upload_to(instance, filename):
 class Project(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
+    tagline = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to=project_image_upload_to, blank=True)
     technologies = models.ManyToManyField(Technology)
     github_url = models.URLField(max_length=255, blank=True)
     website_url = models.URLField(max_length=255, blank=True)
+
+    # TODO: Add a "published" field to the model and use it to filter
+    #       projects in the view.
+    # TODO: Add an ordering field to the model and use it to order
+    #       projects in the view.
 
     class Meta:
         ordering = [

@@ -10,3 +10,12 @@ def index(request):
         "projects": projects,
     }
     return render(request, "projects/index.html", context)
+
+
+def detail(request, project_slug):
+    project = Project.objects.get(slug=project_slug)
+
+    context = {
+        "project": project,
+    }
+    return render(request, "projects/detail.html", context)
