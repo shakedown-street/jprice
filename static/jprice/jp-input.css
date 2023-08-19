@@ -1,6 +1,6 @@
 .jp-input {
   background: transparent;
-  border: 2px solid lightgray;
+  border: 2px solid var(--oc-gray-4);
   border-radius: 4px;
   font-size: 1rem;
   outline: none;
@@ -19,10 +19,10 @@
 }
 
 .jp-input:hover {
-  border: 2px solid gray;
+  border: 2px solid var(--oc-gray-5);
 }
 
 .jp-input:focus,
 .jp-input:active {
-  border: 2px solid #1862ab;
+  border: 2px solid var(--oc-blue-9);
 }

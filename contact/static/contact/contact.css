@@ -1,6 +1,6 @@
 .contact-form {
-  background-color: var(--gray-0);
-  border: 1px solid var(--gray-4);
+  background-color: var(--oc-gray-0);
+  border: 1px solid var(--oc-gray-4);
   border-radius: 4px;
   padding: 1rem;
   max-width: 384px;

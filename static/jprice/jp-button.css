@@ -21,17 +21,35 @@
 
 /* Default */
 .jp-button:hover {
-  background-color: var(--gray-0);
+  background-color: var(--oc-gray-0);
 }
 
 .jp-button:active {
-  background-color: var(--gray-1);
+  background-color: var(--oc-gray-1);
 }
+
+/* Outlined */
+
+.jp-button.outlined {
+  background-color: transparent;
+  border: 1px solid var(--oc-blue-9);
+  color: var(--oc-blue-9);
+}
+
+.jp-button.outlined:hover {
+  background-color: var(--oc-blue-9);
+  color: white;
+}
+
+.jp-button.outlined:active {
+  background-color: var(--oc-blue-8);
+}
+
 
 /* Raised */
 
 .jp-button.raised {
-  background-color: var(--blue-9);
+  background-color: var(--oc-blue-9);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
   color: white;
 }
@@ -41,7 +59,7 @@
 }
 
 .jp-button.raised:disabled {
-  background-color: var(--gray-0) !important;
+  background-color: var(--oc-gray-0) !important;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) !important;
-  color: var(--gray-5) !important;
+  color: var(--oc-gray-5) !important;
 }
