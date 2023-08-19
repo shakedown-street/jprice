@@ -1,7 +1,7 @@
 .blogList__searchForm {
   align-items: center;
-  background-color: var(--gray-0);
-  border: 1px solid var(--gray-4);
+  background-color: var(--oc-gray-0);
+  border: 1px solid var(--oc-gray-4);
   border-radius: 4px;
   display: flex;
   gap: 1rem;
@@ -16,15 +16,15 @@
 }
 
 .blogList__post {
-  background-color: var(--gray-0);
-  border: 1px solid var(--gray-4);
+  background-color: var(--oc-gray-0);
+  border: 1px solid var(--oc-gray-4);
   border-radius: 4px;
   padding: 1rem;
   width: 100%;
 }
 
 .blogList__post__publishedAt {
-  color: var(--gray-6);
+  color: var(--oc-gray-6);
   font-size: 14px;
   margin: 0.5rem 0;
 }

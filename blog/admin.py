@@ -1,6 +1,8 @@
+from django import forms
 from django.contrib import admin
 
 from .models import Post, Topic
+from .widgets import MarkdownEditor
 
 
 @admin.register(Topic)
@@ -18,8 +20,17 @@ class TopicAdmin(admin.ModelAdmin):
     }
 
 
+class PostAdminForm(forms.ModelForm):
+    model = Post
+
+    class Meta:
+        fields = "__all__"
+        widgets = {"content": MarkdownEditor()}
+
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    form = PostAdminForm
     list_display = [
         "title",
         "created_at",
