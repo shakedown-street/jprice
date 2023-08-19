@@ -20,8 +20,8 @@ class Post(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    published_at = models.DateTimeField(null=True, blank=True)
-    topics = models.ManyToManyField(Topic, related_name="posts")
+    published_at = models.DateTimeField(blank=True, null=True)
+    topics = models.ManyToManyField(Topic, blank=True, related_name="posts")
 
     class Meta:
         ordering = [
