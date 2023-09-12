@@ -1,0 +1,186 @@
+html,
+body {
+  font-family: "Arial";
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #212529;
+}
+
+a {
+  color: #228be6;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding-inline-start: 1rem;
+  padding-left: 1rem;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 1rem 0;
+}
+
+.block {
+  display: block;
+}
+
+.divider {
+  background-color: #ced4da;
+  border-radius: 2px;
+  margin: 1rem 0;
+  height: 2px;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 818px;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  padding: 1.5rem 0;
+}
+
+.header__imageContainer {
+  margin-right: 1.5rem;
+  height: 96px;
+  width: 96px;
+}
+
+.header__image {
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.header__main {
+  flex: 1;
+}
+
+.header__title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.header__description {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.content__side {
+  margin-right: 1.5rem;
+  width: 200px;
+}
+
+.content__main {
+  flex: 1;
+}
+
+.section:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.section__title {
+  border-bottom: 2px solid #ced4da;
+  color: #212529;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.profile__address {
+  margin-bottom: 0.5rem;
+}
+
+.profile__phone {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.profile__email {
+  display: block;
+  font-size: 14px;
+}
+
+.badgeGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: #228be6;
+  border-radius: 24px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0.125rem;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+}
+
+.progress {
+  background-color: #ced4da;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  height: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.progress__fill {
+  background-color: #228be6;
+  border-radius: 4px;
+  height: 4px;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.educationItem__school {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.educationItem__location {
+  color: #868e96;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.experienceItem__title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.experienceItem__location {
+  color: #868e96;
+  font-size: 14px;
+}
