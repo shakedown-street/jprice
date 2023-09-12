@@ -1,6 +1,7 @@
 Django==4.2
 Pillow
 markdown
+weasyprint
 
 # Testing
 coverage
