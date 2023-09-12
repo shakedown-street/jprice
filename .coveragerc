@@ -1,0 +1,10 @@
+[run]
+command_line = manage.py test
+include =
+  blog/**/*.py
+  contact/**/*.py
+  jprice/**/*.py
+  projects/**/*.py
+  resume/**/*.py
+omit =
+  **/migrations/**/*.py
