@@ -12,205 +12,140 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="header__imageContainer">
-        <img class="header__image" src="{% static 'resume/me.png' %}" />
+  <div class="header">
+    <h1 class="header__name">Jordan R. Price</h1>
+    <h2 class="header__title">Senior Web Developer</h2>
+  </div>
+  <div class="content">
+    <div class="content__side">
+      <h3 class="section__title">Profile</h3>
+      <div class="profile__address"></div>
+      <div class="profile__links">
+        <div class="profile__link">
+          <img src="{% static 'resume/location-material-outlined.svg' %}" />
+          <div>Pleasant Grove, UT</div>
+        </div>
+        <div class="profile__link">
+          <img src="{% static 'resume/phone-material-outlined.svg' %}" />
+          <a href="tel:8018570620">(801) 857-0620</a>
+        </div>
+        <div class="profile__link">
+          <img src="{% static 'resume/email-material-outlined.svg' %}" />
+          <a href="mailto:pricejordan@outlook.com">pricejordan@outlook.com</a>
+        </div>
+        <div class="profile__link">
+          <img src="{% static 'resume/github-material-outlined.svg' %}" />
+          <a href="https://github.com/shakedown-street">github.com/shakedown-street</a>
+        </div>
+        <div class="profile__link">
+          <img src="{% static 'resume/github-material-outlined.svg' %}" />
+          <a href="https://github.com/Punkweb">github.com/Punkweb</a>
+        </div>
+        <div class="profile__link">
+          <img src="{% static 'resume/linkedin-material-outlined.svg' %}" />
+          <a href="https://linkedin.com/in/pork">linkedin.com/in/pork</a>
+        </div>
       </div>
-      <div class="header__main">
-        <h1 class="header__title">Jordan R. Price</h1>
-        <p class="header__description">
-          8+ years of experience building REST and GraphQL APIs, web and
-          desktop applications, and open source libraries for startups and
-          small businesses.
-        </p>
+      <h3 class="section__title">Languages</h3>
+      <div class="badgeGrid">
+        <div class="badge">Python</div>
+        <div class="badge">JavaScript</div>
+        <div class="badge">TypeScript</div>
+        <div class="badge">HTML</div>
+        <div class="badge">CSS</div>
+        <div class="badge">SCSS</div>
       </div>
+      <h3 class="section__title">Frameworks</h3>
+      <div class="badgeGrid">
+        <div class="badge">Django</div>
+        <div class="badge">Express</div>
+        <div class="badge">React</div>
+        <div class="badge">Next.js</div>
+        <div class="badge">Angular (2+)</div>
+        <div class="badge">Angular.js</div>
+        <div class="badge">Mithril.js</div>
+        <div class="badge">HTMX</div>
+        <div class="badge">jQuery</div>
+      </div>
+      <h3 class="section__title">Tools</h3>
+      <div class="badgeGrid">
+        <div class="badge">Linux</div>
+        <div class="badge">Docker</div>
+        <div class="badge">PostgreSQL</div>
+        <div class="badge">Nginx</div>
+        <div class="badge">Git</div>
+        <div class="badge">Vite</div>
+        <div class="badge">Parcel</div>
+        <div class="badge">Webpack</div>
+        <div class="badge">Electron</div>
+        <div class="badge">Pytest</div>
+        <div class="badge">Jest</div>
+        <div class="badge">Selenium</div>
+      </div>
+      <h3 class="section__title">Education</h3>
+      <div class="educationItem">
+        <div class="educationItem__school">Timpanogos High School</div>
+        <div class="educationItem__location">Orem, UT</div>
+        <div class="educationItem__location">Graduated 2016</div>
+      </div>
+      <p>Relevant courses:</p>
+      <ul>
+        <li>Computer Programming (C#)</li>
+        <li>AP Computer Science (Java)</li>
+      </ul>
     </div>
-    <div class="content">
-      <div class="content__side">
-        <div class="section">
-          <h3 class="section__title">Profile</h3>
-          <div class="profile__address">Pleasant Grove, UT</div>
-          <a class="profile__phone" href="tel:8018570620">(801) 857-0620</a>
-          <a class="profile__email" href="mailto:pricejordan@outlook.com">pricejordan@outlook.com</a>
-        </div>
-        <div class="section">
-          <h3 class="section__title">Frontend</h3>
-          <div class="badgeGrid">
-            <div class="badge">JavaScript</div>
-            <div class="badge">TypeScript</div>
-            <div class="badge">React</div>
-            <div class="badge">Angular (2+)</div>
-            <div class="badge">Angular.js</div>
-            <div class="badge">Mithril.js</div>
-            <div class="badge">jQuery</div>
-            <div class="badge">Electron</div>
-            <div class="badge">HTML</div>
-            <div class="badge">CSS/SCSS</div>
+    <div class="content__main">
+      <div class="container">
+        <p class="tagline">
+          8+ years of experience building REST and GraphQL APIs, and web and
+          desktop applications.
+        </p>
+        <h3 class="section__title">Work Experience</h3>
+        <div class="experienceItem">
+          <h4 class="experienceItem__title">
+            Senior Web Developer, Start Studio (formerly Izeni)
+          </h4>
+          <div class="experienceItem__location">
+            Spanish Fork, UT • September 2015 — Present
           </div>
-        </div>
-        <div class="section">
-          <h3 class="section__title">Backend</h3>
-          <div class="badgeGrid">
-            <div class="badge">Python</div>
-            <div class="badge">Django</div>
-            <div class="badge">Node.js</div>
-            <div class="badge">PostgreSQL</div>
-            <div class="badge">Docker</div>
-            <div class="badge">Linux Server</div>
-          </div>
-        </div>
-        <div class="section">
-          <h3 class="section__title">Qualities</h3>
-          <ul>
-            <li>Motivated</li>
-            <li>Passionate</li>
-            <li>Hard working</li>
-            <li>Detail oriented</li>
-            <li>Solution focused</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3 class="section__title">Education</h3>
-          <div class="educationItem">
-            <div class="educationItem__school">Timpanogos High School</div>
-            <div class="educationItem__location">Orem, UT</div>
-          </div>
-          <p>Relevant courses:</p>
-          <ul>
-            <li>Computer Programming (C#)</li>
-            <li>AP Computer Science (Java)</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3 class="section__title">Hobbies</h3>
-          <ul>
-            <li>Hiking and camping</li>
-            <li>Playing, recording and producing music</li>
-            <li>Game development</li>
-          </ul>
-        </div>
-      </div>
-      <div class="content__main">
-        <div class="section">
-          <h3 class="section__title">Work Experience</h3>
-          <div class="experienceItem">
-            <div class="experienceItem__title">
-              Web Developer, Start Studio (formerly Izeni)
-            </div>
-            <div class="experienceItem__location">
-              Spanish Fork, UT • September 2015 — Present
-            </div>
-            <ul>
-              <li>
-                Start Studio is a fast paced development shop that specializes in helping businesses scope, design and
-                build their software products.
-              </li>
-              <li>
-                I started working as an intern at Izeni while in high school. I learned the basics of Django and
-                Angular.js, and within a month I was hired as a full time employee.
-              </li>
-              <li>
-                I have built dozens of internal and client projects, from small prototypes to large scale applications,
-                using a variety of technologies.
-              </li>
-              <li>
-                I have gained a deep knowledge of Django, React, and Angular (2+). I also have a great understanding of
-                relational databases, REST and GraphQL APIs, Docker, and Linux systems. I have worked with a variety of
-                other technologies on top of these, including Next.js Angular.js, Mithril.js, Node.js, jQuery, Electron
-                and more.
-              </li>
-              <li>
-                In recent years I have also been responsible for interviewing and training new developers, as well as
-                managing the development team.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="section">
-          <div class="section__title">Projects</div>
+          <p class="experienceItem__description">
+            Start Studio is a fast paced development shop that specializes in helping businesses scope, design and
+            build software products. Started working as an intern while in high school. Learned the
+            basics of Django and Angular.js, and within a month was hired as a full time employee. Made considerable
+            growth, adapted to an ever changing environment and was promoted to Senior Web Developer.
+          </p>
           <ul>
             <li>
-              <b>Patri • Angular | Django | REST</b>
-              <ul>
-                <li>
-                  I built a Django REST API and Angular web application for
-                  determining the likelyhood of a company to win a RFP
-                  (Request for Proposal) so they could determine whether or
-                  not to pursue it.
-                </li>
-                <li>
-                  For several years I was the sole developer on this project.
-                  I learned a lot about managing a project and working with
-                  clients.
-                </li>
-              </ul>
+              Gained a deep understanding of relational databases, REST and GraphQL APIs, frontend frameworks and
+              tools, Docker, and Linux systems.
             </li>
             <li>
-              <b>Callpop • Angular | Electron | REST</b>
-              <ul>
-                <li>
-                  I built an Angular and Electron desktop application for
-                  dental receptionists to manage incoming calls and texts.
-                </li>
-                <li>
-                  This was the first project I'd used Electron on. I really
-                  enjoyed learning to build desktop applications with web
-                  technologies, and I've used it on several projects since.
-                </li>
-              </ul>
+              Designed and implemented secure, robust and performant REST API's with Django REST framework, and GraphQL
+              API's with Graphene.
             </li>
             <li>
-              <b>Beehive VC • Angular | GraphQL</b>
-              <ul>
-                <li>
-                  I built an Angular web application for venture capitalists
-                  to make investments in deals that they are invited to.
-                </li>
-                <li>
-                  This was the first project I'd used GraphQL on. I've used it
-                  on many projects since, but while I like the concept of
-                  GraphQL, I still prefer to use REST in most cases.
-                </li>
-              </ul>
+              Developed clean looking and well architectured web and desktop applications, mainly using Angular (2+),
+              React and Electron.
             </li>
             <li>
-              <b>KEEP • Mithril.js | Electron | REST</b>
-              <ul>
-                <li>
-                  I built a desktop application for managing KERI AIDs in the
-                  vLEI Ecosystem.
-                </li>
-                <li>
-                  This was my first project using Mithril.js, which is a very
-                  lightweight JavaScript framework. I learned it very quickly
-                  and really enjoyed working with it. I would definitely use
-                  it again.
-                </li>
-              </ul>
+              Built projects using a variety of other frontend frameworks, including Next.js, Angular.js, Mithril.js,
+              jQuery, and more.
             </li>
             <li>
-              <b>Formidable • Django | Angular | React | GraphQL</b>
-              <ul>
-                <li>
-                  I built a reusable frontend and backend tool for building
-                  dynamic forms and validating form submissions.
-                </li>
-                <li>
-                  Angular and React frontend packages responsible for
-                  rendering JSON form definitions to HTML forms and performing
-                  frontend validation.
-                </li>
-                <li>
-                  Django package responsible for automatically creating a
-                  jsonschema from a form definition and using it to validate
-                  that a submission is valid.
-                </li>
-              </ul>
+              Worked closely with clients to gather requirements, provide estimates, scope and plan projects, deliver
+              MVPs, and provide ongoing support.
+            </li>
+            <li>
+              Mentored junior developers to help them grow their skills. Hosted weekly training sessions to teach
+              best practices and foster a culture of learning and growth.
+            </li>
+            <li>
+              Continually improved project templates and development processes.
             </li>
           </ul>
         </div>
       </div>
+      <p>This resume is generated using Django + WeasyPrint, built with HTML/CSS :)</p>
     </div>
   </div>
 </body>

@@ -1,8 +1,8 @@
 from django.urls import path
 
-from . import views
+from resume.views import resume_pdf
 
 app_name = "resume"
 urlpatterns = [
-    path("", views.resume_pdf, name="resume_pdf"),
+    path("", resume_pdf, name="resume_pdf"),
 ]

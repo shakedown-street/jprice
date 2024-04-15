@@ -1,7 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.template.loader import get_template
-from weasyprint import HTML, CSS
+from weasyprint import HTML
 
 
 def pdf_response(request, template, *args, **kwargs):
@@ -14,7 +13,7 @@ def pdf_response(request, template, *args, **kwargs):
 
     pdf_file = HTML(
         string=rendered_html, base_url=request.build_absolute_uri()
-    ).write_pdf(stylesheets=[CSS(string="@page { size: Letter; margin: 0 }")])
+    ).write_pdf()
     response = HttpResponse(pdf_file, content_type="application/pdf")
     response["Content-Disposition"] = '{}; filename="{}"'.format(disposition, filename)
 
