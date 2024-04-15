@@ -19,11 +19,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
-
-from . import views
+from jprice.views import index
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", index, name="index"),
     path("blog/", include("blog.urls")),
     path("contact/", include("contact.urls")),
     path("projects/", include("projects.urls")),

@@ -1,7 +1,6 @@
 from django import forms
-from django.utils import timezone
 
-from .models import Contact
+from contact.models import Contact
 
 
 class ContactForm(forms.ModelForm):
