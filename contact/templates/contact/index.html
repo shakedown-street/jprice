@@ -6,12 +6,27 @@
 {% endblock %}
 
 {% block content %}
-<h2>Contact Me</h2>
 
-<form class="contact-form" action="{% url 'contact:index' %}" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button class="jp-button raised" type="submit">Send Message</button>
-</form>
+<div class="contact">
+  <h1>Contact Me</h1>
+
+  <form class="contactForm" action="{% url 'contact:index' %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="contactForm__field">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}
+          <ul class="errorlist">
+            {% for error in field.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <button class="jp-button primary fluid raised" type="submit">Send Message</button>
+  </form>
+</div>
 
 {% endblock %}

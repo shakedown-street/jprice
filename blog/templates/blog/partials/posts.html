@@ -4,7 +4,7 @@
 <div id="blog-posts" class="blogList__posts">
   {% for post in posts %}
   <div class="blogList__post">
-    <p class="blogList__post__publishedAt">{{post.published_at | date:"M d, Y"}}</p>
+    <p class="blogList__post__date">{{post.published_at | date:"M d, Y"}}</p>
     <a class="blogList__post__title" href="{% url 'blog:detail' post.slug %}">{{post.title}}</a>
     <p class="blogList__post__content">{{ post.content | unmarkdown | truncatewords:60 }}</p>
     <div class="blogList__post__tags">

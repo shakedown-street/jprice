@@ -1,34 +1,32 @@
-html, body {
-  font-family: Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
+body {
+  background-color: var(--oc-white);
+  color: var(--oc-gray-9);
 }
 
 a {
-  color: var(--oc-blue-9);
-  text-decoration: none;
+  color: var(--primary-9);
 }
 
-li a {
-  text-decoration: none;
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1rem 0;
 }
 
-.main {
-  margin: 2rem 0;
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: 80rem;
   padding: 0 1rem;
+  width: 100%;
 }
 
-img {
-  max-width: 100%;
+.main {
+  margin: 2rem 0;
 }
 
 /* Nav */
@@ -42,10 +40,6 @@ img {
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
-
-.nav__title {
-  font-size: 32px;
 }
 
 .nav__title a {
@@ -63,11 +57,497 @@ img {
   font-size: 16px;
 }
 
-/* Skills */
+/** Table **/
 
-.skills {
+.jp-table-container {
+  overflow-x: auto;
+}
+
+.jp-table {
+  border-collapse: collapse;
+  min-width: 48rem;
+  width: 100%;
+}
+
+.jp-table thead tr th {
+  background-color: var(--oc-gray-1);
+  border-bottom: 1px solid var(--border);
+  color: var(--oc-gray-7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.jp-table tbody tr td {
+  padding: 0.75rem 1rem;
+}
+
+/** Badge **/
+
+.jp-badge {
+  background-color: var(--primary-7);
+  border-radius: 24px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+}
+
+/** Button **/
+
+.jp-button {
+  border-radius: 0.25rem;
+  color: var(--oc-gray-9);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.jp-button:disabled {
+  background-color: var(--oc-gray-0) !important;
+  border-color: var(--oc-gray-0) !important;
+  color: var(--oc-gray-5) !important;
+  cursor: not-allowed;
+}
+
+.jp-button.xs {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.jp-button.sm {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.875rem;
+}
+
+.jp-button.lg {
+  font-size: 1.125rem;
+  padding: 0.625rem 1.125rem;
+}
+
+.jp-button.xl {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.jp-button.fluid {
+  width: 100%;
+}
+
+.jp-button.rounded {
+  border-radius: 2rem;
+}
+
+/* Default */
+.jp-button.default:not(:disabled):hover {
+  background-color: var(--oc-gray-0);
+}
+
+.jp-button.default:not(:disabled):active {
+  background-color: var(--oc-gray-1);
+}
+
+.jp-button.default.primary {
+  color: var(--primary-9);
+}
+
+.jp-button.default.primary:hover {
+  background-color: var(--primary-0);
+}
+
+.jp-button.default.primary:active {
+  background-color: var(--primary-1);
+}
+
+.jp-button.default.danger {
+  color: var(--oc-red-9);
+}
+
+.jp-button.default.danger:hover {
+  background-color: var(--oc-red-0);
+}
+
+.jp-button.default.danger:active {
+  background-color: var(--oc-red-1);
+}
+
+/* Outlined */
+
+.jp-button.outlined {
+  border: 1px solid var(--oc-gray-9);
+  color: var(--oc-gray-9);
+}
+
+.jp-button.outlined:not(:disabled):hover {
+  background-color: var(--oc-gray-0);
+}
+
+.jp-button.outlined:not(:disabled):active {
+  background-color: var(--oc-gray-1);
+}
+
+.jp-button.outlined.primary {
+  border-color: var(--primary-9);
+  color: var(--primary-9);
+}
+
+.jp-button.outlined.primary:hover {
+  background-color: var(--primary-0);
+}
+
+.jp-button.outlined.primary:active {
+  background-color: var(--primary-1);
+}
+
+.jp-button.outlined.danger {
+  border-color: var(--oc-red-9);
+  color: var(--oc-red-9);
+}
+
+.jp-button.outlined.danger:hover {
+  background-color: var(--oc-red-0);
+}
+
+.jp-button.outlined.danger:active {
+  background-color: var(--oc-red-1);
+}
+
+/* Ghost */
+
+.jp-button.ghost {
+  border: 1px solid var(--oc-gray-9);
+  color: var(--oc-gray-9);
+}
+
+.jp-button.ghost:not(:disabled):hover {
+  background-color: var(--oc-gray-9);
+  color: white;
+}
+
+.jp-button.ghost:not(:disabled):active {
+  background-color: var(--oc-gray-9);
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.jp-button.ghost.primary {
+  border: 1px solid var(--primary-9);
+  color: var(--primary-9);
+}
+
+.jp-button.ghost.primary:not(:disabled):hover {
+  background-color: var(--primary-9);
+  color: white;
+}
+
+.jp-button.ghost.primary:not(:disabled):active {
+  background-color: var(--primary-9);
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.jp-button.ghost.danger {
+  border: 1px solid var(--oc-red-9);
+  color: var(--oc-red-9);
+}
+
+.jp-button.ghost.danger:not(:disabled):hover {
+  background-color: var(--oc-red-9);
+  color: white;
+}
+
+.jp-button.ghost.danger:not(:disabled):active {
+  background-color: var(--oc-red-9);
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+/* Raised */
+
+.jp-button.raised {
+  background-color: var(--oc-gray-9);
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.jp-button.raised.primary {
+  background-color: var(--primary-9);
+}
+
+.jp-button.raised.danger {
+  background-color: var(--oc-red-9);
+}
+
+.jp-button.raised:not(:disabled):hover {
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+}
+
+.jp-button.raised:not(:disabled):active {
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+}
+
+/** Icon Button **/
+
+.jp-icon-button {
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  text-align: center;
+
+  height: 2rem;
+  line-height: 2rem;
+  max-height: 2rem;
+  max-width: 2rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  width: 2rem;
+}
+
+.jp-icon-button:disabled {
+  background-color: var(--oc-gray-5) !important;
+  border-color: var(--oc-gray-5) !important;
+  color: var(--oc-gray-5) !important;
+  cursor: not-allowed;
+}
+
+.jp-icon-button .material-symbols-outlined {
+  display: block;
+  font-size: 1.125rem;
+}
+
+.jp-icon-button.rounded {
+  border-radius: 100%;
+}
+
+/* Default */
+
+.jp-icon-button.default {
+  color: var(--oc-gray-9);
+}
+
+.jp-icon-button.default:not(:disabled):hover {
+  background-color: var(--oc-gray-0);
+}
+
+.jp-icon-button.default:not(:disabled):active {
+  background-color: var(--oc-gray-1);
+}
+
+/* Outlined */
+
+.jp-icon-button.outlined {
+  border: 1px solid var(--oc-gray-9);
+  color: var(--oc-gray-9);
+}
+
+.jp-icon-button.outlined:not(:disabled):hover {
+  background-color: var(--oc-gray-0);
+}
+
+.jp-icon-button.outlined:not(:disabled):active {
+  background-color: var(--oc-gray-1);
+}
+
+/* Outlined */
+
+.jp-icon-button.ghost {
+  border: 1px solid var(--oc-gray-9);
+  color: var(--oc-gray-9);
+}
+
+.jp-icon-button.ghost:not(:disabled):hover {
+  background-color: var(--oc-gray-9);
+  color: white;
+}
+
+.jp-icon-button.ghost:not(:disabled):active {
+  background-color: var(--oc-gray-9);
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+/* Raised */
+
+.jp-icon-button.raised {
+  background-color: var(--oc-gray-9);
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.jp-icon-button.raised:not(:disabled):hover {
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+}
+
+.jp-icon-button.raised:not(:disabled):active {
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+}
+
+/** Input **/
+
+.jp-input {
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  color: var(--body-fg);
+  outline: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.15s ease;
+}
+
+.jp-input:disabled {
+  background-color: var(--oc-gray-3);
+  cursor: not-allowed;
+}
+
+.jp-input.fluid {
+  width: 100%;
+}
+
+.jp-input:not(:disabled):hover {
+  border-color: var(--oc-gray-6);
+}
+
+.jp-input:not(:disabled):focus,
+.jp-input:not(:disabled):active {
+  border: 1px solid var(--primary-9);
+}
+
+.jp-input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/** Card **/
+
+.jp-card {
+  background-color: var(--oc-white);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  min-width: 16rem;
+  width: fit-content;
+}
+
+.jp-card.fluid {
+  width: 100%;
+}
+
+.jp-card.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jp-card.margin {
+  margin: 1rem 0;
+}
+
+.jp-card.padding {
+  padding: 1rem;
+}
+
+.jp-card-header {
+  background-color: var(--oc-gray-1);
+  border-bottom: 1px solid var(--border);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.jp-card-content {
+  padding: 1rem;
+}
+
+/* Pagination */
+
+.jp-pagination {
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.jp-pagination-item:not(:last-of-type) {
+  border-right: 1px solid var(--border);
+}
+
+.jp-pagination-link {
+  color: var(--primary-9);
+  display: block;
+  padding: 0.25rem 0.5rem;
+}
+
+.jp-pagination-link:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.jp-pagination-item:first-child .jp-pagination-link {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.jp-pagination-item:last-child .jp-pagination-link {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.jp-pagination-item.disabled .jp-pagination-link {
+  color: var(--oc-gray-6);
+  cursor: auto;
+  pointer-events: none;
+}
+
+.jp-pagination-item.active .jp-pagination-link {
+  color: white;
+  background-color: var(--primary-9);
+  border-color: var(--primary-9);
+  z-index: 1;
+}
+
+.jp-pagination-item:not(:disabled):not(.disabled):not(.active):hover {
+  background-color: var(--oc-gray-0);
+}
+
+.jp-pagination-item:not(:disabled):not(.disabled):not(.active):active {
+  background-color: var(--oc-gray-1);
+}
+
+/* Breadcrumb */
+
+.jp-breadcrumb {
+  background-color: var(--oc-gray-1);
+  border-radius: 0.25rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  width: 280px;
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0.75rem 1rem;
+}
+
+.jp-breadcrumb-item a {
+  color: var(--primary-9);
+}
+
+.jp-breadcrumb-item:not(:first-of-type)::before {
+  color: var(--oc-gray-6);
+  content: "›";
+  display: inline-block;
+  padding: 0 0.5rem;
+  pointer-events: none;
+}
+
+.jp-breadcrumb-item.active {
+  color: var(--oc-gray-9);
 }

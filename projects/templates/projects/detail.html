@@ -1,10 +1,12 @@
 {% extends 'jprice/base.html' %}
 
-{% load markdown %}
+{% load markdown static %}
 
 {% block title_prefix %}{{project.name}} | {% endblock %}
 
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'projects/projects.css' %}">
+{% endblock %}
 
 {% block content %}
 
@@ -13,7 +15,9 @@
 <h3>{{project.tagline}}</h3>
 
 {% if project.image %}
-<img src="{{project.image.url}}" />
+<div class="projectDetail__image">
+  <img src="{{project.image.url}}" />
+</div>
 {% endif %}
 
 {% for technology in project.technologies.all %}
@@ -24,10 +28,10 @@
 
 <div>
   {% if project.github_url %}
-  <a class="jp-button outlined" href="{{project.github_url}}" target="_blank">GitHub</a>
+  <a class="jp-button ghost" href="{{project.github_url}}" target="_blank">GitHub</a>
   {% endif %}
   {% if project.website_url %}
-  <a class="jp-button outlined" href="{{project.website_url}}" target="_blank">Website</a>
+  <a class="jp-button ghost" href="{{project.website_url}}" target="_blank">Website</a>
   {% endif %}
 </div>
 

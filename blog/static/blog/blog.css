@@ -1,12 +1,8 @@
 .blogList__searchForm {
   align-items: center;
-  background-color: var(--oc-gray-0);
-  border: 1px solid var(--oc-gray-4);
-  border-radius: 4px;
   display: flex;
   gap: 1rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .blogList__posts {
@@ -18,20 +14,22 @@
 .blogList__post {
   background-color: var(--oc-gray-0);
   border: 1px solid var(--oc-gray-4);
-  border-radius: 4px;
+  border-radius: 0.25rem;
   padding: 1rem;
   width: 100%;
 }
 
-.blogList__post__publishedAt {
+.blogList__post__date {
   color: var(--oc-gray-6);
-  font-size: 14px;
-  margin: 0.5rem 0;
+  font-size: 0.875rem;
 }
 
 .blogList__post__title {
   display: block;
-  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.blogList__post__content {
   margin: 1rem 0;
 }
 
@@ -39,5 +37,4 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
 }

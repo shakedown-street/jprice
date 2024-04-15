@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<h2>Projects</h2>
+<h1>Projects</h1>
 
 {% if projects %}
 <div class="projectList">
@@ -26,10 +26,10 @@
       </div>
       <div class="projectList__project__links">
         {% if project.github_url %}
-        <a class="jp-button outlined" href="{{project.github_url}}" target="_blank">GitHub</a>
+        <a class="jp-button ghost" href="{{project.github_url}}" target="_blank">GitHub</a>
         {% endif %}
         {% if project.website_url %}
-        <a class="jp-button outlined" href="{{project.website_url}}" target="_blank">Website</a>
+        <a class="jp-button ghost" href="{{project.website_url}}" target="_blank">Website</a>
         {% endif %}
       </div>
     </div>
