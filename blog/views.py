@@ -3,35 +3,29 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 
+from blog.forms import BlogSearchForm
 from blog.models import Post, Topic
 
 
 def index(request):
-    topics = Topic.objects.annotate(posts_count=Count("posts")).filter(
-        posts_count__gt=0
-    )
     posts = Post.objects.filter(
         published_at__isnull=False, published_at__lte=timezone.now()
     )
 
-    if request.method == "POST":
-        search = request.POST.get("search", None)
-        topic = request.POST.get("topic", None)
+    form = BlogSearchForm(request.GET)
+
+    if form.is_valid():
+        search = form.cleaned_data.get("search")
+        topic = form.cleaned_data.get("topic")
 
         if search:
             posts = posts.filter(title__icontains=search)
 
         if topic:
-            posts = posts.filter(topics__slug=topic)
-
-        context = {
-            "posts": posts.order_by("-published_at"),
-        }
-
-        return render(request, "blog/partials/posts.html", context)
+            posts = posts.filter(topics=topic)
 
     context = {
-        "topics": topics.order_by("name"),
+        "form": form,
         "posts": posts.order_by("-published_at"),
     }
 
