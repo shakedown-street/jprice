@@ -50,12 +50,12 @@ ul li {
 }
 
 .header__name {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
 .header__title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 
@@ -77,13 +77,13 @@ ul li {
 }
 
 .tagline {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0 0 2rem;
 }
 
 .section__title {
   border-bottom: 2px solid #ced4da;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: italic;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -103,14 +103,14 @@ ul li {
 
 .profile__link img {
   margin-right: 0.5rem;
-  height: 20px;
-  width: 20px;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 .profile__link a,
 .profile__link div {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .badgeGrid {
@@ -120,9 +120,9 @@ ul li {
 
 .badge {
   background-color: #4263eb;
-  border-radius: 24px;
+  border-radius: 1.5rem;
   color: white;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   margin: 0.125rem;
   padding: 0.25rem 0.5rem;
@@ -137,7 +137,7 @@ ul li {
 
 .educationItem__location {
   color: #495057;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-bottom: 0.5rem;
 }
 
@@ -149,16 +149,48 @@ ul li {
 
 .experienceItem__location {
   color: #495057;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: italic;
   margin-bottom: 1rem;
 }
 
 .experienceItem__description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
 .responsibilities__header {
   margin: 1rem 0;
+}
+
+.project {
+  margin: 1rem 0;
+}
+
+.project__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project__link {
+  align-items: center;
+  display: flex;
+}
+
+.project__link img {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.project__link a,
+.project__link div {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.project__description {
+  font-size: 0.875rem;
+  margin-top: 1rem;
 }
