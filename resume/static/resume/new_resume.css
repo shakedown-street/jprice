@@ -1,0 +1,54 @@
+@page {
+  margin: 1.5rem;
+  size: Letter;
+}
+
+html,
+body {
+  font-family: "Arial";
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.sectionHeader {
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
+}
+
+/* section {
+  border: 1px solid red;
+} */
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 1.125em;
+}
+
+ul {
+  line-height: 1.25;
+}

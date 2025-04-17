@@ -1,7 +1,5 @@
-import datetime
 from django.http import HttpResponse
 from django.template.loader import get_template
-from django.utils import timezone
 from weasyprint import HTML
 
 
@@ -29,6 +27,18 @@ def resume_pdf(request):
     return pdf_response(
         request,
         "resume/resume.html",
+        disposition=disposition,
+        filename=filename,
+    )
+
+
+def new_resume_pdf(request):
+    disposition = "inline"
+    filename = "jordan-price-resume.pdf"
+
+    return pdf_response(
+        request,
+        "resume/new_resume.html",
         disposition=disposition,
         filename=filename,
     )
