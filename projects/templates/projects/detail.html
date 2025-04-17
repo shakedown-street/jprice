@@ -21,17 +21,17 @@
 {% endif %}
 
 {% for technology in project.technologies.all %}
-<div class="jp-badge">{{technology.name}}</div>
+<div class="pw-badge primary rounded">{{technology.name}}</div>
 {% endfor %}
 
 <p>{{project.description | markdown | safe}}</p>
 
 <div>
   {% if project.github_url %}
-  <a class="jp-button ghost" href="{{project.github_url}}" target="_blank">GitHub</a>
+  <a class="pw-button ghost" href="{{project.github_url}}" target="_blank">GitHub</a>
   {% endif %}
   {% if project.website_url %}
-  <a class="jp-button ghost" href="{{project.website_url}}" target="_blank">Website</a>
+  <a class="pw-button ghost" href="{{project.website_url}}" target="_blank">Website</a>
   {% endif %}
 </div>
 

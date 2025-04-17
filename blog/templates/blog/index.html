@@ -14,7 +14,7 @@
 <form class="blogList__searchForm" action="{% url 'blog:index' %}" method="get">
   {% for field in form %}
   <div class="blogList__searchForm__field">
-    <label class="jp-input-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+    <label class="pw-input-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
     {{ field }}
   </div>
   {% endfor %}
@@ -22,7 +22,7 @@
   {{ form.non_field_errors}}
   {% endif %}
   <div class="blogList__searchForm__actions">
-    <button class="jp-button raised">Search</button>
+    <button class="pw-button raised">Search</button>
   </div>
 </form>
 

@@ -21,15 +21,15 @@
       <p class="projectList__project__description">{{ project.description | unmarkdown | truncatewords:60 }}</p>
       <div class="projectList__project__techList">
         {% for technology in project.technologies.all %}
-        <div class="jp-badge">{{technology.name}}</div>
+        <div class="pw-badge primary rounded">{{technology.name}}</div>
         {% endfor %}
       </div>
       <div class="projectList__project__links">
         {% if project.github_url %}
-        <a class="jp-button ghost" href="{{project.github_url}}" target="_blank">GitHub</a>
+        <a class="pw-button ghost" href="{{project.github_url}}" target="_blank">GitHub</a>
         {% endif %}
         {% if project.website_url %}
-        <a class="jp-button ghost" href="{{project.website_url}}" target="_blank">Website</a>
+        <a class="pw-button ghost" href="{{project.website_url}}" target="_blank">Website</a>
         {% endif %}
       </div>
     </div>

@@ -7,12 +7,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title_prefix %}{% endblock %}Jordan Price</title>
-  <meta name="description"
-    content="{% block meta_description %}Skilled web developer with over 8 years of work experience building REST and GraphQL APIs, web and desktop applications, and open source libraries for startups and small businesses.{% endblock %}">
-  <link rel="stylesheet" href="{% static 'jprice/open-color.css' %}" />
-  <link rel="stylesheet" href="{% static 'jprice/defaults.css' %}" />
+  <link rel="stylesheet" href="{% static 'jprice/punkweb-ui.min.css' %}" />
   <link rel="stylesheet" href="{% static 'jprice/variables.css' %}" />
-  <link rel="stylesheet" href="{% static 'jprice/typography.css' %}" />
   <link rel="stylesheet" href="{% static 'jprice/style.css' %}" />
   {% block extra_head %}{% endblock %}
 </head>
@@ -20,7 +16,7 @@
 <body>
   {% include 'jprice/partials/nav.html' %}
   <main class="main">
-    <div class="container">{% block content %}{% endblock %}</div>
+    <div class="pw-container">{% block content %}{% endblock %}</div>
   </main>
   {% block extra_script %}{% endblock %}
 </body>
