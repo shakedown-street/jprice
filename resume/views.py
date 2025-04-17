@@ -42,3 +42,15 @@ def new_resume_pdf(request):
         disposition=disposition,
         filename=filename,
     )
+
+
+def comprehensive_resume_pdf(request):
+    disposition = "inline"
+    filename = "jordan-price-resume.pdf"
+
+    return pdf_response(
+        request,
+        "resume/comprehensive_resume.html",
+        disposition=disposition,
+        filename=filename,
+    )

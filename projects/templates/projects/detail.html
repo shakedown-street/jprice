@@ -6,6 +6,8 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'projects/projects.css' %}">
+<link rel="stylesheet" href="{% static 'blog/markdown.css' %}">
+<link rel="stylesheet" href="{% static 'blog/prism.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -35,4 +37,8 @@
   {% endif %}
 </div>
 
+{% endblock %}
+
+{% block extra_script %}
+<script src="{% static 'blog/prism.js' %}"></script>
 {% endblock %}
