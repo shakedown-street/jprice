@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jordan R. Price</title>
+    <link rel="stylesheet" href="{% static 'resume/old_resume.css' %}" />
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="header__name">Jordan R. Price</h1>
+      <h2 class="header__title">Senior Software Developer</h2>
+    </div>
+    <div class="content">
+      <div class="content__side">
+        <h3 class="section__title">Profile</h3>
+        <div class="profile__links">
+          <div class="profile__link">
+            <img src="{% static 'resume/location-material-outlined.svg' %}" />
+            <div>Pleasant Grove, UT</div>
+          </div>
+          <div class="profile__link">
+            <img src="{% static 'resume/phone-material-outlined.svg' %}" />
+            <a href="tel:8018570620">(801) 857-0620</a>
+          </div>
+          <div class="profile__link">
+            <img src="{% static 'resume/email-material-outlined.svg' %}" />
+            <a href="mailto:pricejordan@outlook.com">pricejordan@outlook.com</a>
+          </div>
+          <div class="profile__link">
+            <img src="{% static 'resume/linkedin-material-outlined.svg' %}" />
+            <a href="https://linkedin.com/in/pork">linkedin.com/in/pork</a>
+          </div>
+          <div class="profile__link">
+            <img src="{% static 'resume/github-material-outlined.svg' %}" />
+            <a href="https://github.com/shakedown-street">github.com/shakedown-street</a>
+          </div>
+          <div class="profile__link">
+            <img src="{% static 'resume/github-material-outlined.svg' %}" />
+            <a href="https://github.com/Punkweb">github.com/Punkweb</a>
+          </div>
+        </div>
+        <h3 class="section__title">Primary Skills</h3>
+        <div class="badgeGrid">
+          <div class="badge">JavaScript</div>
+          <div class="badge">Python</div>
+          <div class="badge">Java</div>
+          <div class="badge">Django</div>
+          <div class="badge">Angular</div>
+          <div class="badge">React</div>
+          <div class="badge">HTMX</div>
+          <div class="badge">Electron</div>
+          <div class="badge">Docker</div>
+          <div class="badge">Nginx</div>
+          <div class="badge">Linux</div>
+          <div class="badge">PostgreSQL</div>
+        </div>
+        <h3 class="section__title">Education</h3>
+        <div class="educationItem">
+          <div class="educationItem__school">Timpanogos High School</div>
+          <div class="educationItem__location">Graduated 2016</div>
+        </div>
+        <p>Relevant courses:</p>
+        <ul>
+          <li>Computer Programming (C#)</li>
+          <li>AP Computer Science (Java)</li>
+        </ul>
+      </div>
+      <div class="content__main">
+        <div class="container">
+          <p class="tagline">
+            Experienced Software Developer with 10 years in web development, specializing in building applications and backend systems. Skilled in managing projects, collaborating with clients, and improving existing development processes.  Passionate about meaningful work and ensuring projects are completed successfully with lasting impact.
+          </p>
+          <h3 class="section__title">Experience</h3>
+          <div class="experienceItem">
+            <h4 class="experienceItem__title">Senior Software Developer, Start Studio (formerly Izeni)</h4>
+            <div class="experienceItem__location">Spanish Fork, UT • Sep 2015 – Present</div>
+            <ul>
+              <li>
+                Delivered numerous client projects on time and within budget, strengthening client relationships and driving repeat business through referrals.
+              </li>
+              <li>
+                Managed multiple concurrent projects, effectively prioritizing tasks and maintaining on-time delivery in fast-paced environments.
+              </li>
+              <li>
+                Worked closely with clients and designers during project planning to define scope, clarify requirements, and provide accurate cost estimates.
+              </li>
+              <li>
+                Developed internal backend and frontend project templates, enabling faster project initialization and reducing costs by providing prebuilt, well-polished common functionality.
+              </li>
+              <li>
+                Created an internal estimate builder tool that standardized project estimation across teams, ensuring consistency and professionalism in client proposals.
+              </li>
+              <li>
+                Designed and implemented a reusable React UI library, streamlining frontend development and ensuring a cohesive design system across all projects.
+              </li>
+              {% comment %} <li>
+                Built an internal client and lead tracking system, providing teams with visibility into project statuses and active negotiations.
+              </li> {% endcomment %}
+              <li>
+                Trained and mentored 8+ junior and mid-level developers, accelerating onboarding and enhancing overall team efficiency.
+              </li>
+            </ul>
+          </div>
+          <h3 class="section__title">Projects</h3>
+          <div class="projectList">
+            <div class="project">
+              <div class="project__header">
+                <div class="project__title">PunkwebBB</div>
+                <div class="project__description">
+                  Django reusable application that provides a simple to use forum board for any Django website.
+                </div>
+                <ul>
+                  <li>
+                    Built with a focus on being simple to install and configure, while providing a fully functional BBCode forum board out of the box.
+                  </li>
+                  <li>
+                    Utilized <b>HTMX</b> to create user-friendly interactions and real-time updates with minimal JavaScript and without full page reloads.
+                  </li>
+                </ul>
+                <div class="project__link">
+                  <img src="{% static 'resume/github-material-outlined.svg' %}" />
+                  <a href="https://github.com/Punkweb/PunkwebBB">github.com/Punkweb/PunkwebBB</a>
+                </div>
+                <div class="project__link">
+                  <img src="{% static 'resume/link-material-outlined.svg' %}" />
+                  <a href="https://punkweb.net/board/">punkweb.net/board/</a>
+                </div>
+              </div>
+            </div>
+            {% comment %} <div class="project">
+              <div class="project__title">FitPulse</div>
+              <div class="project__description">
+                Diet and exercise web app that allows users to measure improvement on exercise metrics and track daily caloric and mcro nutrient intake.
+              </div>
+              <div class="project__link">
+                <img src="{% static 'resume/github-material-outlined.svg' %}" />
+                <a href="https://github.com/shakedown-street/fit-pulse">github.com/shakedown-street/fit-pulse</a>
+              </div>
+              <div class="project__link">
+                <img src="{% static 'resume/link-material-outlined.svg' %}" />
+                <a href="https://fitpulse.cc">fitpulse.cc</a>
+              </div>
+            </div> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -32,25 +32,25 @@ def resume_pdf(request):
     )
 
 
-def new_resume_pdf(request):
+def old_resume_pdf(request):
     disposition = "inline"
     filename = "jordan-price-resume.pdf"
 
     return pdf_response(
         request,
-        "resume/new_resume.html",
+        "resume/old_resume.html",
         disposition=disposition,
         filename=filename,
     )
 
 
-def comprehensive_resume_pdf(request):
+def invoice_pdf(request):
     disposition = "inline"
-    filename = "jordan-price-resume.pdf"
+    filename = "invoice.pdf"
 
     return pdf_response(
         request,
-        "resume/comprehensive_resume.html",
+        "resume/invoice.html",
         disposition=disposition,
         filename=filename,
     )

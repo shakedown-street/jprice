@@ -1,31 +1,28 @@
 {% extends 'jprice/base.html' %}
+
 {% load static %}
 
-{% block title_prefix %}Blog | {% endblock %}
-
+{% block title_prefix %}Blog |{% endblock %}
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
 {% endblock %}
-
 {% block content %}
+  <h1>Blog</h1>
+  <form class="blogList__searchForm"
+        action="{% url 'blog:index' %}"
+        method="get">
+    {% for field in form %}
+      <div class="blogList__searchForm__field">
+        <label class="pw-input-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+      </div>
+    {% endfor %}
+    {% if form.non_field_errors %}{{ form.non_field_errors }}{% endif %}
+    <div class="blogList__searchForm__actions">
+      <button class="pw-button raised">Search</button>
+    </div>
+  </form>
 
-<h1>Blog</h1>
-
-<form class="blogList__searchForm" action="{% url 'blog:index' %}" method="get">
-  {% for field in form %}
-  <div class="blogList__searchForm__field">
-    <label class="pw-input-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-    {{ field }}
-  </div>
-  {% endfor %}
-  {% if form.non_field_errors %}
-  {{ form.non_field_errors}}
-  {% endif %}
-  <div class="blogList__searchForm__actions">
-    <button class="pw-button raised">Search</button>
-  </div>
-</form>
-
-{% include 'blog/partials/posts.html' %}
+  {% include 'blog/partials/posts.html' %}
 
 {% endblock %}

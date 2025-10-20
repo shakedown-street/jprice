@@ -2,43 +2,37 @@
 
 {% load markdown static %}
 
-{% block title_prefix %}{{project.name}} | {% endblock %}
-
+{% block title_prefix %}{{ project.name }} |{% endblock %}
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'projects/projects.css' %}">
-<link rel="stylesheet" href="{% static 'blog/markdown.css' %}">
-<link rel="stylesheet" href="{% static 'blog/prism.css' %}">
+  <link rel="stylesheet" href="{% static 'projects/projects.css' %}" />
+  <link rel="stylesheet" href="{% static 'blog/markdown.css' %}" />
+  <link rel="stylesheet" href="{% static 'blog/prism.css' %}" />
 {% endblock %}
-
 {% block content %}
-
-<h2>{{project.name}}</h2>
-
-<h3>{{project.tagline}}</h3>
-
-{% if project.image %}
-<div class="projectDetail__image">
-  <img src="{{project.image.url}}" />
-</div>
-{% endif %}
-
-{% for technology in project.technologies.all %}
-<div class="pw-badge primary rounded">{{technology.name}}</div>
-{% endfor %}
-
-<p>{{project.description | markdown | safe}}</p>
-
-<div>
-  {% if project.github_url %}
-  <a class="pw-button ghost" href="{{project.github_url}}" target="_blank">GitHub</a>
+  <h2>{{ project.name }}</h2>
+  <h3>{{ project.tagline }}</h3>
+  {% if project.image %}
+    <div class="projectDetail__image">
+      <img src="{{ project.image.url }}" />
+    </div>
   {% endif %}
-  {% if project.website_url %}
-  <a class="pw-button ghost" href="{{project.website_url}}" target="_blank">Website</a>
-  {% endif %}
-</div>
-
+  {% for technology in project.technologies.all %}
+    <div class="pw-badge primary rounded">{{ technology.name }}</div>
+  {% endfor %}
+  <p>{{ project.description | markdown | safe }}</p>
+  <div>
+    {% if project.github_url %}
+      <a class="pw-button ghost"
+         href="{{ project.github_url }}"
+         target="_blank">GitHub</a>
+    {% endif %}
+    {% if project.website_url %}
+      <a class="pw-button ghost"
+         href="{{ project.website_url }}"
+         target="_blank">Website</a>
+    {% endif %}
+  </div>
 {% endblock %}
-
 {% block extra_script %}
-<script src="{% static 'blog/prism.js' %}"></script>
+  <script src="{% static 'blog/prism.js' %}"></script>
 {% endblock %}

@@ -14,7 +14,7 @@ hr {
 }
 
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   user-select: none;
 }
 
@@ -49,30 +49,4 @@ hr {
 .nav__link {
   color: white;
   font-size: 16px;
-}
-
-/** Table **/
-
-.jp-table-container {
-  overflow-x: auto;
-}
-
-.jp-table {
-  border-collapse: collapse;
-  min-width: 48rem;
-  width: 100%;
-}
-
-.jp-table thead tr th {
-  background-color: var(--oc-gray-1);
-  border-bottom: 1px solid var(--border);
-  color: var(--oc-gray-7);
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
-  text-align: left;
-}
-
-.jp-table tbody tr td {
-  padding: 0.75rem 1rem;
 }

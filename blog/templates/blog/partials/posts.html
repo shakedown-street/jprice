@@ -1,22 +1,21 @@
 {% load markdown %}
 
 {% if posts %}
-<div class="blogList__posts">
-  {% for post in posts %}
-  <div class="blogList__post">
-    <div class="blogList__post__date">{{post.published_at | date:"M d, Y"}}</div>
-    <a class="blogList__post__title" href="{% url 'blog:detail' post.slug %}">{{post.title}}</a>
-    <p class="blogList__post__content">{{ post.content | unmarkdown | truncatewords:60 }}</p>
-    <div class="blogList__post__tags">
-      {% for topic in post.topics.all %}
-      <div class="pw-badge primary rounded">{{topic.name}}</div>
-      {% endfor %}
-    </div>
+  <div class="blogList__posts">
+    {% for post in posts %}
+      <div class="blogList__post">
+        <div class="blogList__post__date">{{ post.published_at | date:"M d, Y" }}</div>
+        <a class="blogList__post__title"
+           href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+        <p class="blogList__post__content">{{ post.content | unmarkdown | truncatewords:60 }}</p>
+        <div class="blogList__post__tags">
+          {% for topic in post.topics.all %}<div class="pw-badge primary rounded">{{ topic.name }}</div>{% endfor %}
+        </div>
+      </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 {% else %}
-<div>
-  <p>No post matches the given query.</p>
-</div>
+  <div>
+    <p>No post matches the given query.</p>
+  </div>
 {% endif %}

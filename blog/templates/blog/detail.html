@@ -1,25 +1,21 @@
 {% extends 'jprice/base.html' %}
+
 {% load markdown static %}
 
-{% block title_prefix %}{{post.title}} | {% endblock %}
-
+{% block title_prefix %}{{ post.title }} |{% endblock %}
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
-<link rel="stylesheet" href="{% static 'blog/markdown.css' %}">
-<link rel="stylesheet" href="{% static 'blog/prism.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
+  <link rel="stylesheet" href="{% static 'blog/markdown.css' %}" />
+  <link rel="stylesheet" href="{% static 'blog/prism.css' %}" />
 {% endblock %}
-
 {% block content %}
-
-<article>
-  <header>
-    <h1>{{post.title}}</h1>
-  </header>
-  <div class="markdown">{{post.content | markdown | safe}}</div>
-</article>
-
+  <article>
+    <header>
+      <h1>{{ post.title }}</h1>
+    </header>
+    <div class="markdown">{{ post.content | markdown | safe }}</div>
+  </article>
 {% endblock %}
-
 {% block extra_script %}
-<script src="{% static 'blog/prism.js' %}"></script>
+  <script src="{% static 'blog/prism.js' %}"></script>
 {% endblock %}

@@ -1,16 +1,15 @@
 {% extends 'jprice/base.html' %}
+
 {% load static %}
 
 {% block content %}
-
-<a href="https://www.linkedin.com/in/jordan-price-a32a5113a/" target="_blank"><button
-    class="pw-button ghost">LinkedIn</button>
-</a>
-<a href="https://github.com/shakedown-street" target="_blank">
-  <button class="pw-button ghost">Github</button>
-</a>
-<a href="{% url 'resume:new_resume_pdf' %}" target="_blank">
-  <button class="pw-button ghost">Resume</button>
-</a>
-
+  <a href="https://www.linkedin.com/in/pork/" target="_blank">
+    <button class="pw-button ghost">LinkedIn</button>
+  </a>
+  <a href="https://github.com/shakedown-street" target="_blank">
+    <button class="pw-button ghost">Github</button>
+  </a>
+  <a href="{% url 'resume:resume_pdf' %}" target="_blank">
+    <button class="pw-button ghost">Resume</button>
+  </a>
 {% endblock %}
