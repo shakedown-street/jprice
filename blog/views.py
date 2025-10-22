@@ -1,10 +1,9 @@
-from django.db.models import Count
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 
-from blog.forms import BlogSearchForm
-from blog.models import Post, Topic
+from .forms import BlogSearchForm
+from .models import Post
 
 
 def index(request):

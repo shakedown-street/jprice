@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from contact.forms import ContactForm
+from .forms import ContactForm
 
 
 def index(request):

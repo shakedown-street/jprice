@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "contact",
     "projects",
     "resume",
+    "utils",
 ]
 
 MIDDLEWARE = [

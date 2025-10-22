@@ -1,8 +1,9 @@
 from django import forms
 from django.contrib import admin
 
-from blog.widgets import MarkdownEditor
-from projects.models import Project, Technology
+from utils.widgets import MarkdownEditor
+
+from .models import Project, Technology
 
 
 @admin.register(Technology)

@@ -1,8 +1,9 @@
 from django import forms
 from django.contrib import admin
 
-from blog.models import Post, Topic
-from blog.widgets import MarkdownEditor
+from utils.widgets import MarkdownEditor
+
+from .models import Post, Topic
 
 
 @admin.register(Topic)

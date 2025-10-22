@@ -21,32 +21,3 @@ hr {
 .main {
   margin: 2rem 0;
 }
-
-/* Nav */
-
-.nav {
-  background-color: var(--oc-gray-9);
-  padding: 1rem 0;
-}
-
-.nav__content {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav__title a {
-  color: white;
-  font-size: 1.5rem;
-}
-
-.nav__links {
-  align-items: center;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav__link {
-  color: white;
-  font-size: 16px;
-}

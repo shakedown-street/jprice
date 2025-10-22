@@ -1,7 +1,7 @@
 from django import forms
 from django.db.models import Count
 
-from blog.models import Topic
+from .models import Topic
 
 
 class BlogSearchForm(forms.Form):

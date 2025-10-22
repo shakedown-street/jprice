@@ -1,15 +1,51 @@
 {% extends 'jprice/base.html' %}
 
-{% load static %}
+{% load markdown static %}
 
 {% block content %}
+  <h1>Jordan</h1>
+  <h2>Software & Web Developer</h2>
+  <p>
+    I'm a full-stack developer who thrives in studio and startup environments.  I enjoy
+    owning multiple concurrent projects from conception to deployment and beyond.  I have a strong business sense
+    and roll with the often scrappy nature of startup work.  I have developed a knack for finding the most effective path
+    to a solution that nets the best results with the least wasted effort.
+  </p>
   <a href="https://www.linkedin.com/in/pork/" target="_blank">
-    <button class="pw-button ghost">LinkedIn</button>
+    <button class="pw-button">LinkedIn</button>
   </a>
   <a href="https://github.com/shakedown-street" target="_blank">
-    <button class="pw-button ghost">Github</button>
+    <button class="pw-button">Github</button>
   </a>
   <a href="{% url 'resume:resume_pdf' %}" target="_blank">
-    <button class="pw-button ghost">Resume</button>
+    <button class="pw-button">Resume</button>
   </a>
+  <h2>Projects</h2>
+  {% for project in projects %}
+    <a href="{% url 'projects:detail' project.slug %}" target="_blank">{{ project.name }}</a>
+    <p>{{ project.tagline }}</p>
+    <p>{{ project.description | unmarkdown | truncatewords:60 }}</p>
+    <div>
+      {% for technology in project.technologies.all %}<div class="pw-badge">{{ technology.name }}</div>{% endfor %}
+    </div>
+  {% endfor %}
+  <a href="{% url 'projects:index' %}">
+    <button class="pw-button">See All Projects</button>
+  </a>
+  <h2>Posts</h2>
+  {% for post in posts %}
+    <div>{{ post.published_at | date:"M d, Y" }}</div>
+    <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+    <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
+    <div>
+      {% for topic in post.topics.all %}<div class="pw-badge">{{ topic.name }}</div>{% endfor %}
+    </div>
+  {% endfor %}
+  <a href="{% url 'blog:index' %}">
+    <button class="pw-button">See All Posts</button>
+  </a>
+  <h2>Contact</h2>
+
+  {% include 'contact/partials/contact_form.html' %}
+
 {% endblock %}

@@ -11,7 +11,7 @@ class MarkdownEditor(forms.Textarea):
             "all": (
                 "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.css",
                 "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/theme/monokai.css",
-                "/static/blog/markdown-editor.css",
+                "/static/utils/markdown-editor.css",
             )
         }
         js = (
@@ -19,5 +19,5 @@ class MarkdownEditor(forms.Textarea):
             "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/markdown/markdown.js",
             "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/python/python.js",
             "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/javascript/javascript.js",
-            "/static/blog/markdown-editor.js",
+            "/static/utils/markdown-editor.js",
         )

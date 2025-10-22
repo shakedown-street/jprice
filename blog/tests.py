@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from blog.models import Post
+from .models import Post
 
 
 class BlogIndexTests(TestCase):

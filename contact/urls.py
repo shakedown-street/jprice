@@ -1,6 +1,6 @@
 from django.urls import path
 
-from contact.views import index, submitted
+from .views import index, submitted
 
 app_name = "contact"
 urlpatterns = [
