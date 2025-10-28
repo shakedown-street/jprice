@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 
 from .models import Project
@@ -18,7 +18,7 @@ def index(request):
 
 
 def detail(request, project_slug):
-    project = Project.objects.get(slug=project_slug)
+    project = get_object_or_404(Project, slug=project_slug)
 
     if not project.published_at or project.published_at > timezone.now():
         raise Http404("No Project matches the given query.")

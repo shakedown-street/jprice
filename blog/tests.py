@@ -11,7 +11,7 @@ class BlogIndexTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "No post matches the given query.")
-        self.assertQuerysetEqual(response.context["posts"], [])
+        self.assertQuerySetEqual(response.context["posts"], [])
 
     def test_unpublished_post(self):
         Post.objects.create(title="Test Post", slug="test-post", content="Test Content")
@@ -19,7 +19,7 @@ class BlogIndexTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "No post matches the given query.")
-        self.assertQuerysetEqual(response.context["posts"], [])
+        self.assertQuerySetEqual(response.context["posts"], [])
 
     def test_published_post(self):
         post = Post.objects.create(
@@ -32,7 +32,7 @@ class BlogIndexTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, post.title)
-        self.assertQuerysetEqual(response.context["posts"], [post])
+        self.assertQuerySetEqual(response.context["posts"], [post])
 
 
 class BlogDetailTests(TestCase):
