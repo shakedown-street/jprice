@@ -8,18 +8,12 @@ from .models import Project, Technology
 
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
-    list_display = [
+    list_display = (
         "name",
         "slug",
-    ]
-    search_fields = [
-        "name",
-    ]
-    prepopulated_fields = {
-        "slug": [
-            "name",
-        ]
-    }
+    )
+    search_fields = ("name",)
+    prepopulated_fields = {"slug": ("name",)}
 
 
 class ProjectAdminForm(forms.ModelForm):
@@ -27,24 +21,19 @@ class ProjectAdminForm(forms.ModelForm):
 
     class Meta:
         fields = "__all__"
-        widgets = {"description": MarkdownEditor()}
+        widgets = {"content": MarkdownEditor()}
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectAdminForm
-    list_display = [
+    list_display = (
         "name",
         "slug",
-    ]
-    list_filter = [
-        "technologies",
-    ]
-    search_fields = [
-        "name",
-    ]
-    prepopulated_fields = {
-        "slug": [
-            "name",
-        ]
-    }
+        "created_at",
+        "updated_at",
+        "published_at",
+    )
+    list_filter = ("technologies",)
+    search_fields = ("name",)
+    prepopulated_fields = {"slug": ("name",)}

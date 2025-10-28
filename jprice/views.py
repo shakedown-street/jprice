@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.utils import timezone
 
 from blog.models import Post
 from contact.forms import ContactForm
@@ -6,8 +7,14 @@ from projects.models import Project
 
 
 def index(request):
-    projects = Project.objects.all()[:3]
-    posts = Post.objects.all()[:3]
+    projects = Project.objects.filter(
+        published_at__isnull=False,
+        published_at__lte=timezone.now(),
+    )[:3]
+    posts = Post.objects.filter(
+        published_at__isnull=False,
+        published_at__lte=timezone.now(),
+    )[:3]
     form = ContactForm()
 
     return render(
@@ -19,3 +26,7 @@ def index(request):
             "form": form,
         },
     )
+
+
+def poorman(request):
+    return render(request, "jprice/poorman.html")

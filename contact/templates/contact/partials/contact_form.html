@@ -1,17 +1,5 @@
-<form class="pw-form" action="{% url 'contact:index' %}" method="post">
+<form action="{% url 'contact:index' %}" method="post">
   {% csrf_token %}
-  {% for field in form %}
-    <div class="pw-form-group">
-      <label class="pw-input-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-      {{ field }}
-      {% if field.errors %}
-        <ul class="errorlist">
-          {% for error in field.errors %}<li class="error">{{ error }}</li>{% endfor %}
-        </ul>
-      {% endif %}
-    </div>
-  {% endfor %}
-  <div class="pw-form-actions">
-    <button class="pw-button primary fluid raised" type="submit">Send Message</button>
-  </div>
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
 </form>

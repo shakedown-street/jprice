@@ -1,28 +1,34 @@
 {% extends 'jprice/base.html' %}
 
-{% load static %}
+{% load markdown static %}
 
 {% block title_prefix %}Blog |{% endblock %}
-{% block extra_head %}
-  <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
-{% endblock %}
 {% block content %}
-  <h1>Blog</h1>
-  <form class="blogList__searchForm"
-        action="{% url 'blog:index' %}"
-        method="get">
-    {% for field in form %}
-      <div class="blogList__searchForm__field">
-        <label class="pw-input-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field }}
-      </div>
-    {% endfor %}
-    {% if form.non_field_errors %}{{ form.non_field_errors }}{% endif %}
-    <div class="blogList__searchForm__actions">
-      <button class="pw-button raised">Search</button>
-    </div>
+  <h2>Blog</h2>
+  <form action="{% url 'blog:index' %}" method="get">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
   </form>
-
-  {% include 'blog/partials/posts.html' %}
-
+  {% if posts %}
+    {% for post in posts %}
+      <article>
+        <header>
+          <a href="{% url 'blog:detail' post.slug %}">
+            <h3>{{ post.title }}</h3>
+          </a>
+          <small>{{ post.published_at | date:"M d, Y" }}</small>
+        </header>
+        <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
+        <footer>
+          <div class="badge-list">
+            {% for topic in post.topics.all %}<div class="badge">{{ topic.name }}</div>{% endfor %}
+          </div>
+        </footer>
+      </article>
+    {% endfor %}
+  {% else %}
+    <div>
+      <p>No post matches the given query.</p>
+    </div>
+  {% endif %}
 {% endblock %}

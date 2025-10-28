@@ -4,18 +4,17 @@
 
 {% block title_prefix %}{{ post.title }} |{% endblock %}
 {% block extra_head %}
-  <link rel="stylesheet" href="{% static 'blog/blog.css' %}" />
-  <link rel="stylesheet" href="{% static 'utils/markdown.css' %}" />
-  <link rel="stylesheet" href="{% static 'utils/prism.css' %}" />
-{% endblock %}
-{% block content %}
-  <article>
-    <header>
-      <h1>{{ post.title }}</h1>
-    </header>
-    <div class="markdown">{{ post.content | markdown | safe }}</div>
-  </article>
+  <link rel="stylesheet" href="{% static 'utils/prism-one-dark.css' %}" />
 {% endblock %}
 {% block extra_script %}
-  <script src="{% static 'blog/prism.js' %}"></script>
+  <script src="{% static 'utils/prism.js' %}"></script>
+{% endblock %}
+{% block content %}
+  <a href="{% url 'blog:index' %}">&larr; Back to Blog</a>
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.published_at | date:"M d, Y" }}</p>
+  <div class="badge-list">
+    {% for topic in post.topics.all %}<div class="badge">{{ topic.name }}</div>{% endfor %}
+  </div>
+  {{ post.content | markdown | safe }}
 {% endblock %}

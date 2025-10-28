@@ -8,7 +8,8 @@ from .models import Post
 
 def index(request):
     posts = Post.objects.filter(
-        published_at__isnull=False, published_at__lte=timezone.now()
+        published_at__isnull=False,
+        published_at__lte=timezone.now(),
     )
 
     form = BlogSearchForm(request.GET)
@@ -25,7 +26,7 @@ def index(request):
 
     context = {
         "form": form,
-        "posts": posts.order_by("-published_at"),
+        "posts": posts,
     }
 
     return render(request, "blog/index.html", context)

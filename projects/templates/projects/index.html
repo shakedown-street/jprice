@@ -3,47 +3,21 @@
 {% load markdown static %}
 
 {% block title_prefix %}Projects |{% endblock %}
-{% block extra_head %}
-  <link rel="stylesheet" href="{% static 'projects/projects.css' %}" />
-{% endblock %}
 {% block content %}
-  <h1>Projects</h1>
-  {% if projects %}
-    <div class="projectList">
-      {% for project in projects %}
-        <div class="projectList__project">
-          <div class="projectList__project__detail">
-            <a class="projectList__project__name"
-               href="{% url 'projects:detail' project.slug %}">{{ project.name }}</a>
-            <p class="projectList__project__tagline">{{ project.tagline }}</p>
-            <p class="projectList__project__description">{{ project.description | unmarkdown | truncatewords:60 }}</p>
-            <div class="projectList__project__techList">
-              {% for technology in project.technologies.all %}
-                <div class="pw-badge primary rounded">{{ technology.name }}</div>
-              {% endfor %}
-            </div>
-            <div class="projectList__project__links">
-              {% if project.github_url %}
-                <a class="pw-button ghost"
-                   href="{{ project.github_url }}"
-                   target="_blank">GitHub</a>
-              {% endif %}
-              {% if project.website_url %}
-                <a class="pw-button ghost"
-                   href="{{ project.website_url }}"
-                   target="_blank">Website</a>
-              {% endif %}
-            </div>
-          </div>
-          {% if project.image %}
-            <div class="projectList__project__imageContainer">
-              <img class="projectList__project__image" src="{{ project.image.url }}" />
-            </div>
-          {% endif %}
+  <h2>Projects</h2>
+  {% for project in projects %}
+    <article>
+      <header>
+        <a href="{% url 'projects:detail' project.slug %}">
+          <h3>{{ project.name }}</h3>
+        </a>
+      </header>
+      <p>{{ project.description | unmarkdown | truncatewords:60 }}</p>
+      <footer>
+        <div class="badge-list">
+          {% for technology in project.technologies.all %}<div class="badge">{{ technology.name }}</div>{% endfor %}
         </div>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No project matches the given query.</p>
-  {% endif %}
+      </footer>
+    </article>
+  {% endfor %}
 {% endblock %}

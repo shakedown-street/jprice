@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
-from .views import index
+from .views import index, poorman
 
 urlpatterns = [
     path("", index, name="index"),
@@ -28,6 +28,7 @@ urlpatterns = [
     path("contact/", include("contact.urls")),
     path("projects/", include("projects.urls")),
     path("resume/", include("resume.urls")),
+    path("poorman/", poorman),
     path("admin/", admin.site.urls),
 ]
 
