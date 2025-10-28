@@ -4,32 +4,50 @@
   box-sizing: border-box;
 }
 
-:root {
+/* :root {
   --sans-font: 'Helvetica', 'Arial', sans-serif;
   --mono-font: Consolas, Menlo, Monaco, 'Ubuntu Mono', monospace;
   --background: #f8f9fa;
   --foreground: #212529;
   --muted-foreground: #868e96;
-  --primary: #1864ab;
+  --primary: #0ca678;
   --primary-foreground: #ffffff;
-  --primary-hover: #1971c2;
-  --primary-background: #e7f5ff;
+  --primary-hover: #12b886;
   --border: #ced4da;
   --border-radius: 0.25rem;
   --border-width: 1px;
   --disabled: #dee2e6;
-  --code: #f03e3e;
-  --preformatted: #495057;
+  --alt-table-row-background: #e9ecef;
+  --badge-background: #e9ecef;
+  --badge-foreground: #212529;
+  --callout-background: #e6fcf5;
+  --callout-border: #087f5b;
+  --callout-foreground: #087f5b;
+  --code: #ff6b6b;
   --mark: #fff9db;
-}
+} */
 
-textarea,
-select,
-input,
-progress {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+:root {
+  --sans-font: 'Helvetica', 'Arial', sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, 'Ubuntu Mono', monospace;
+  --background: #212529;
+  --foreground: #f1f3f5;
+  --muted-foreground: #adb5bd;
+  --primary: #20c997;
+  --primary-foreground: #212529;
+  --primary-hover: #38d9a9;
+  --border: #343a40;
+  --border-radius: 0.25rem;
+  --border-width: 1px;
+  --disabled: #495057;
+  --alt-table-row-background: #495057;
+  --badge-background: #e9ecef;
+  --badge-foreground: #343a40;
+  --callout-background: #e6fcf5;
+  --callout-border: #087f5b;
+  --callout-foreground: #087f5b;
+  --code: #ff6b6b;
+  --mark: #fff9db;
 }
 
 html {
@@ -266,17 +284,26 @@ th {
 }
 
 th {
-  background-color: #f1f3f5;
+  background-color: var(--alt-table-row-background);
   font-weight: bold;
 }
 
 tr:nth-child(even) {
-  background-color: #f1f3f5;
+  background-color: var(--alt-table-row-background);
 }
 
 table caption {
   font-style: italic;
   font-size: 0.875rem;
+}
+
+textarea,
+select,
+input,
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 input,
@@ -297,7 +324,9 @@ button,
 input,
 select,
 textarea {
+  background-color: var(--background);
   border: var(--border-width) solid var(--border);
+  color: var(--foreground);
 }
 
 label {
@@ -317,10 +346,14 @@ select:not([multiple]) {
   padding-inline-end: 25px;
 }
 
+input[type='range'] {
+  padding: 0;
+}
+
 input[type='checkbox'],
 input[type='radio'] {
-  vertical-align: middle;
   position: relative;
+  vertical-align: middle;
   width: min-content;
 }
 
@@ -335,35 +368,34 @@ input[type='radio'] {
 
 input[type='checkbox']:checked,
 input[type='radio']:checked {
-  background-color: var(--primary);
+  background-color: var(--foreground);
 }
 
 input[type='checkbox']:checked::after {
-  content: ' ';
-  width: 0.2em;
-  height: 0.4em;
-  border-radius: 0;
-  position: absolute;
-  top: 0.04em;
-  left: 0.18em;
   background-color: transparent;
-  border-right: solid var(--background) 0.08em;
-  border-bottom: solid var(--background) 0.08em;
-  font-size: 1.8em;
-  transform: rotate(45deg);
+  border-bottom: 2px solid var(--background);
+  border-radius: 0;
+  border-left: 2px solid var(--background);
+  content: ' ';
+  font-size: 2rem;
+  height: 6px;
+  left: 2px;
+  position: absolute;
+  top: 4px;
+  transform: rotate(-45deg);
+  width: 12px;
 }
 
 input[type='radio']:checked::after {
-  /* creates a colored circle for the checked radio button  */
-  content: ' ';
-  width: 0.3em;
-  height: 0.3em;
-  border-radius: 100%;
-  position: absolute;
-  top: 0.125em;
   background-color: var(--background);
-  left: 0.125em;
-  font-size: 1.8em;
+  border-radius: 100%;
+  content: ' ';
+  font-size: 2rem;
+  height: 8px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  width: 8px;
 }
 
 input[type='color'] {
@@ -415,7 +447,7 @@ figcaption {
 
 blockquote {
   border-inline-start: 0.25rem solid var(--primary);
-  color: var(--text-light);
+  color: var(--muted-foreground);
   font-style: italic;
   margin-block: 2rem;
   margin-inline-end: 0;
@@ -438,15 +470,15 @@ samp {
 }
 
 kbd {
-  color: var(--preformatted);
-  border: var(--border-width) solid var(--preformatted);
-  border-bottom: 3px solid var(--preformatted);
+  color: var(--foreground);
+  border: var(--border-width) solid var(--foreground);
+  border-bottom: 3px solid var(--foreground);
   border-radius: var(--border-radius);
   padding: 0.1rem 0.4rem;
 }
 
 pre {
-  color: var(--preformatted);
+  color: var(--foreground);
   max-width: 100%;
   overflow: auto;
   padding: 1rem 1.5rem;
@@ -454,7 +486,7 @@ pre {
 
 pre code {
   background: none;
-  color: var(--preformatted);
+  color: var(--foreground);
   font-size: 0.875rem;
   margin: 0;
   padding: 0;
@@ -527,9 +559,9 @@ sub {
 }
 
 .badge {
-  background-color: #e9ecef;
+  background-color: var(--badge-background);
   border-radius: 2rem;
-  color: #343a40;
+  color: var(--badge-foreground);
   display: inline-block;
   font-size: 0.75rem;
   font-weight: bold;
@@ -539,9 +571,10 @@ sub {
 }
 
 .callout {
-  background-color: #e7f5ff;
-  border: 1px solid #1c7ed6;
+  background-color: var(--callout-background);
+  border: var(--border-width) solid var(--callout-border);
   border-radius: 0.25rem;
+  color: var(--callout-foreground);
   padding: 0.5rem 1rem;
   width: 100%;
 }
