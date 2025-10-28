@@ -1,19 +1,21 @@
 from django import forms
-from django.db.models import Count
+from django.db.models import Count, Q
+from django.utils import timezone
 
 from .models import Topic
 
 
 class BlogSearchForm(forms.Form):
-    search = forms.CharField(
-        max_length=256,
-        required=False,
-        widget=forms.TextInput(attrs={"class": "pw-input"}),
-    )
+    search = forms.CharField(max_length=255, required=False)
     topic = forms.ModelChoiceField(
-        queryset=Topic.objects.annotate(posts_count=Count("posts")).filter(
-            posts_count__gt=0
-        ),
+        queryset=Topic.objects.annotate(
+            posts_count=Count(
+                "posts",
+                filter=(
+                    Q(posts__published_at__isnull=False)
+                    & Q(posts__published_at__lte=timezone.now())
+                ),
+            )
+        ).filter(posts_count__gt=0),
         required=False,
-        widget=forms.Select(attrs={"class": "pw-input"}),
     )
