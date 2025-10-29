@@ -2,7 +2,7 @@
 
 {% load markdown static %}
 
-{% block title_prefix %}{{ project.name }} |{% endblock %}
+{% block title_suffix %}| {{ project.name }}{% endblock %}
 {% block extra_head %}
   <link rel="stylesheet" href="{% static 'utils/prism-duotone-sea.css' %}" />
 {% endblock %}
