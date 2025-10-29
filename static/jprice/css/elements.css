@@ -573,6 +573,11 @@ sub {
   width: fit-content;
 }
 
+.badge-warning {
+  background-color: oklch(95.4% 0.038 75.164);
+  color: oklch(64.6% 0.222 41.116);
+}
+
 .callout {
   background-color: var(--callout-background);
   border: var(--border-width) solid var(--callout-border);
@@ -580,6 +585,12 @@ sub {
   color: var(--callout-foreground);
   padding: 0.5rem 1rem;
   width: 100%;
+}
+
+.callout-warning {
+  background-color: oklch(98% 0.016 73.684);
+  border-color: oklch(64.6% 0.222 41.116);
+  color: oklch(64.6% 0.222 41.116);
 }
 
 .container {

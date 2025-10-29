@@ -10,6 +10,7 @@
       <header>
         <a href="{% url 'projects:detail' project.slug %}">
           <h3>{{ project.name }}</h3>
+          {% if not project.is_published %}<span class="badge badge-warning">Unpublished</span>{% endif %}
         </a>
       </header>
       <p>{{ project.description | unmarkdown | truncatewords:60 }}</p>
