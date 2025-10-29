@@ -7,47 +7,47 @@
 /* :root {
   --sans-font: 'Helvetica', 'Arial', sans-serif;
   --mono-font: Consolas, Menlo, Monaco, 'Ubuntu Mono', monospace;
-  --background: #f8f9fa;
-  --foreground: #212529;
-  --muted-foreground: #868e96;
-  --primary: #0ca678;
-  --primary-foreground: #ffffff;
-  --primary-hover: #12b886;
-  --border: #ced4da;
+  --background: oklch(98.5% 0.002 247.839);
+  --foreground: oklch(13% 0.028 261.692);
+  --muted-foreground: oklch(55.1% 0.027 264.364);
+  --primary: oklch(50.8% 0.118 165.612);
+  --primary-foreground: var(--background);
+  --primary-hover: oklch(59.6% 0.145 163.225);
+  --border: oklch(87.2% 0.01 258.338);
   --border-radius: 0.25rem;
   --border-width: 1px;
-  --disabled: #dee2e6;
-  --alt-table-row-background: #e9ecef;
-  --badge-background: #e9ecef;
-  --badge-foreground: #212529;
-  --callout-background: #e6fcf5;
-  --callout-border: #087f5b;
-  --callout-foreground: #087f5b;
-  --code: #ff6b6b;
-  --mark: #fff9db;
+  --disabled: oklch(86.9% 0.022 252.894);
+  --alt-table-row-background: oklch(92.9% 0.013 255.508);
+  --badge-background: var(--foreground);
+  --badge-foreground: var(--background);
+  --callout-background: oklch(97.9% 0.021 166.113);
+  --callout-border: oklch(59.6% 0.145 163.225);
+  --callout-foreground: oklch(59.6% 0.145 163.225);
+  --code: oklch(64.5% 0.246 16.439);
+  --mark: oklch(96.2% 0.059 95.617);
 } */
 
 :root {
   --sans-font: 'Helvetica', 'Arial', sans-serif;
   --mono-font: Consolas, Menlo, Monaco, 'Ubuntu Mono', monospace;
-  --background: #212529;
-  --foreground: #f1f3f5;
-  --muted-foreground: #adb5bd;
-  --primary: #20c997;
-  --primary-foreground: #212529;
-  --primary-hover: #38d9a9;
-  --border: #343a40;
+  --background: ;
+  --foreground: oklch(87.2% 0.01 258.338);
+  --muted-foreground: oklch(70.7% 0.022 261.325);
+  --primary: oklch(84.5% 0.143 164.978);
+  --primary-foreground: var(--background);
+  --primary-hover: oklch(90.5% 0.093 164.15);
+  --border: oklch(37.3% 0.034 259.733);
   --border-radius: 0.25rem;
   --border-width: 1px;
-  --disabled: #495057;
-  --alt-table-row-background: #495057;
-  --badge-background: #e9ecef;
-  --badge-foreground: #343a40;
-  --callout-background: #e6fcf5;
-  --callout-border: #087f5b;
-  --callout-foreground: #087f5b;
-  --code: #ff6b6b;
-  --mark: #fff9db;
+  --disabled: oklch(44.6% 0.03 256.802);
+  --alt-table-row-background: oklch(27.8% 0.033 256.848);
+  --badge-background: var(--foreground);
+  --badge-foreground: var(--background);
+  --callout-background: oklch(97.9% 0.021 166.113);
+  --callout-border: oklch(59.6% 0.145 163.225);
+  --callout-foreground: oklch(59.6% 0.145 163.225);
+  --code: oklch(71.2% 0.194 13.428);
+  --mark: oklch(96.2% 0.059 95.617);
 }
 
 html {
@@ -465,8 +465,11 @@ pre,
 pre span,
 kbd,
 samp {
-  color: var(--code);
   font-family: var(--mono-font);
+}
+
+code {
+  color: var(--code);
 }
 
 kbd {
@@ -487,7 +490,6 @@ pre {
 pre code {
   background: none;
   color: var(--foreground);
-  font-size: 0.875rem;
   margin: 0;
   padding: 0;
 }

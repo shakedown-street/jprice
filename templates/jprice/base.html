@@ -1,14 +1,76 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       {% block title_prefix %}{% endblock %}
     Jordan Price</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'jprice/elements.css' %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="{% static 'jprice/favicon-32x32.png' %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="{% static 'jprice/favicon-16x16.png' %}" />
+    <link rel="icon"
+          type="image/x-icon"
+          href="{% static 'jprice/favicon.ico' %}" />
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="{% static 'jprice/apple-touch-icon.png' %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="{% static "jprice/android-chrome-192x192.png" %}" />
+    <link rel="icon"
+          type="image/png"
+          sizes="512x512"
+          href="{% static "jprice/android-chrome-512x512.png" %}" />
+    <link rel="manifest" href={% static "jprice/site.webmanifest" %} />
+    <meta name="description"
+          content="Senior full-stack developer specializing in Django and React, building scalable web apps with modern tooling." />
+    <meta name="keywords"
+          content="Jordan Price, Full-Stack Developer, Django Developer, React Developer, Software Engineer, Python Developer, Web Developer, REST API, PostgreSQL, TypeScript, TailwindCSS, shadcn, HTMX, Start Studio, Utah Developer, Open Source, PunkwebBB, Schedule Builder, FitPulse, DigitalOcean, Docker, CI/CD" />
+    <meta name="author" content="Jordan Price" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title"
+          content="Jordan Price | Senior Full-Stack Developer" />
+    <meta property="og:description"
+          content="Full-stack engineer experienced in Django, React, and scalable REST APIs. Creator of PunkwebBB. Passionate about building efficient, modern web applications." />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:image"
+          content="https://yourdomain.com/static/preview-image.jpg" />
+    <meta property="og:site_name" content="Jordan Price Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title"
+          content="Jordan Price | Full-Stack Developer – Django & React" />
+    <meta name="twitter:description"
+          content="Building scalable web apps with Django, React, and TypeScript. Experienced in backend architecture, and modern frontend." />
+    <meta name="twitter:image"
+          content="https://yourdomain.com/static/preview-image.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jordan Price",
+        "jobTitle": "Senior Full-Stack Developer",
+        "url": "https://yourdomain.com/",
+        "image": "https://yourdomain.com/static/profile.jpg",
+        "sameAs": [
+          "https://github.com/shakedown-street",
+          "https://github.com/Punkweb",
+          "https://linkedin.com/in/pork"
+        ],
+        "knowsAbout": ["Django", "React", "Python", "TypeScript", "PostgreSQL", "REST APIs", "Docker", "CI/CD", "TailwindCSS"],
+        "contactPoint": "https://yourdomain.com/contact/"
+      }
+    </script>
+    <link rel="stylesheet" href="{% static 'jprice/css/elements.css' %}" />
     {% block extra_head %}{% endblock %}
   </head>
   <body>
@@ -24,7 +86,7 @@
             <a href="https://www.linkedin.com/in/pork/" target="_blank">LinkedIn</a>
           </li>
           <li>
-            <a href="https://github.com/shakedown-street" target="_blank">Github</a>
+            <a href="https://github.com/shakedown-street" target="_blank">GitHub</a>
           </li>
           <li>
             <a href="{% url 'resume:resume_pdf' %}" target="_blank">Resume</a>
@@ -35,6 +97,9 @@
     <main class="container">
       {% block content %}{% endblock %}
     </main>
+    <footer>
+      <p>&copy; Jordan Price. All rights reserved.</p>
+    </footer>
     {% block extra_script %}{% endblock %}
   </body>
 </html>

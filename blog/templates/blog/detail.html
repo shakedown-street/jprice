@@ -4,13 +4,13 @@
 
 {% block title_prefix %}{{ post.title }} |{% endblock %}
 {% block extra_head %}
-  <link rel="stylesheet" href="{% static 'utils/prism-one-dark.css' %}" />
+  <link rel="stylesheet" href="{% static 'utils/prism-duotone-sea.css' %}" />
 {% endblock %}
 {% block extra_script %}
   <script src="{% static 'utils/prism.js' %}"></script>
 {% endblock %}
 {% block content %}
-  <a href="{% url 'blog:index' %}">&larr; Back to Blog</a>
+  <a href="{% url 'blog:index' %}">&larr; Back to blog</a>
   <h2>{{ post.title }}</h2>
   <p>{{ post.published_at | date:"M d, Y" }}</p>
   <div class="badge-list">
