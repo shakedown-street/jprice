@@ -25,10 +25,7 @@ class BlogSitemap(Sitemap):
     changefreq = "yearly"
 
     def items(self):
-        return Post.objects.filter(
-            published_at__isnull=False,
-            published_at__lte=timezone.now(),
-        )
+        return Post.objects.published()
 
     def lastmod(self, obj):
         return obj.updated_at
@@ -41,10 +38,7 @@ class ProjectsSitemap(Sitemap):
     changefreq = "yearly"
 
     def items(self):
-        return Project.objects.filter(
-            published_at__isnull=False,
-            published_at__lte=timezone.now(),
-        )
+        return Project.objects.published()
 
     def lastmod(self, obj):
         return obj.updated_at
