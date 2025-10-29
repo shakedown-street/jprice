@@ -6,7 +6,11 @@ from .models import Topic
 
 
 class BlogSearchForm(forms.Form):
-    search = forms.CharField(max_length=255, required=False)
+    search = forms.CharField(
+        max_length=255,
+        required=False,
+        widget=forms.TextInput(attrs={"placeholder": "Search"}),
+    )
     topic = forms.ModelChoiceField(
         queryset=Topic.objects.annotate(
             posts_count=Count(

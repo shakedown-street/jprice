@@ -75,25 +75,42 @@
     {% block extra_head %}{% endblock %}
   </head>
   <body>
-    <header>
-      <h1>Jordan Price</h1>
-      <p>Software & Web Developer</p>
-      <nav>
-        <ul>
-          <li>
-            <a href="{% url 'index' %}">Home</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/pork/" target="_blank">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://github.com/shakedown-street" target="_blank">GitHub</a>
-          </li>
-          <li>
-            <a href="{% url 'resume:resume_pdf' %}" target="_blank">Resume</a>
-          </li>
-        </ul>
-      </nav>
+    <header class="nav">
+      <div class="nav-content container">
+        <div class="nav-main">
+          <a href="{% url 'index' %}">
+            <img class="nav-logo"
+                 src="{% static 'jprice/logo.png' %}"
+                 alt="Jordan Price Logo" />
+          </a>
+          <nav class="nav-links">
+            <ul>
+              <li data-active="{% if current_view == 'projects:index' or current_view == 'projects:detail' %}true{% else %}false{% endif %}">
+                <a href={% url 'projects:index' %}>Projects</a>
+              </li>
+              <li data-active="{% if current_view == 'blog:index' or current_view == 'blog:detail' %}true{% else %}false{% endif %}">
+                <a href={% url 'blog:index' %}>Blog</a>
+              </li>
+              <li data-active="{% if current_view == 'contact:index' %}true{% else %}false{% endif %}">
+                <a href={% url 'contact:index' %}>Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <nav class="nav-links">
+          <ul>
+            <li>
+              <a href="https://github.com/shakedown-street" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/pork/" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+              <a href="{% url 'resume:resume_pdf' %}" target="_blank">Resume</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main class="container">
       {% block content %}{% endblock %}
