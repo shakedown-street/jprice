@@ -32,8 +32,8 @@ def index(request):
     return render(request, "blog/index.html", context)
 
 
-def detail(request, post_slug):
-    post = get_object_or_404(Post, slug=post_slug)
+def detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
 
     if not post.published_at or post.published_at > timezone.now():
         raise Http404("No Post matches the given query.")

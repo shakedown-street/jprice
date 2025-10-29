@@ -17,8 +17,8 @@ def index(request):
     return render(request, "projects/index.html", context)
 
 
-def detail(request, project_slug):
-    project = get_object_or_404(Project, slug=project_slug)
+def detail(request, slug):
+    project = get_object_or_404(Project, slug=slug)
 
     if not project.published_at or project.published_at > timezone.now():
         raise Http404("No Project matches the given query.")
