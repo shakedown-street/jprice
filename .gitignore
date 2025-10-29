@@ -5,8 +5,8 @@ __pycache__
 *.sqlite3
 
 ### Media files
-media/*
-!media/.gitkeep
+jprice/media/*
+!jprice/media/.gitkeep
 
 ### Testing
 .coverage
