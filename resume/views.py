@@ -23,15 +23,3 @@ def old_resume_pdf(request):
         disposition=disposition,
         filename=filename,
     )
-
-
-def invoice_pdf(request):
-    disposition = "inline"
-    filename = "invoice.pdf"
-
-    return pdf_response(
-        request,
-        "resume/invoice.html",
-        disposition=disposition,
-        filename=filename,
-    )
