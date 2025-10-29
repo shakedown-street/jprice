@@ -7,10 +7,10 @@ from .models import Post
 
 
 def index(request):
-    posts = Post.objects.filter(
-        published_at__isnull=False,
-        published_at__lte=timezone.now(),
-    )
+    if not request.user.is_staff:
+        posts = Post.objects.published()
+    else:
+        posts = Post.objects.all()
 
     form = BlogSearchForm(request.GET)
 
@@ -35,7 +35,7 @@ def index(request):
 def detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
-    if not post.published_at or post.published_at > timezone.now():
+    if not request.user.is_staff and not post.is_published:
         raise Http404("No Post matches the given query.")
 
     context = {

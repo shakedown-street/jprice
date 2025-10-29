@@ -53,9 +53,15 @@
     <a href="{% url 'blog:index' %}">See all posts</a>
   </section>
   <section>
+    <h2>Skills</h2>
+    <div class="badge-list">
+      {% for technology in technologies %}<div class="badge">{{ technology.name }}</div>{% endfor %}
+    </div>
+  </section>
+  <section>
     <h2>Contact</h2>
 
-    {% include 'contact/partials/contact_form.html' %}
+    {% include 'contact/partials/contact_form.html' with form=contact_form %}
 
   </section>
 {% endblock %}

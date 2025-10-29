@@ -4,30 +4,26 @@ from django.utils import timezone
 
 from blog.models import Post
 from contact.forms import handle_contact_form
-from projects.models import Project
+from projects.models import Project, Technology
 
 
 def index(request):
-    projects = Project.objects.filter(
-        published_at__isnull=False,
-        published_at__lte=timezone.now(),
-    )[:3]
-    posts = Post.objects.filter(
-        published_at__isnull=False,
-        published_at__lte=timezone.now(),
-    )[:3]
-    form = handle_contact_form(request)
+    featured_projects = Project.objects.featured()
+    latest_posts = Post.objects.published()[:3]
+    technologies = Technology.objects.all()
+    contact_form = handle_contact_form(request)
 
-    if isinstance(form, HttpResponseRedirect):
-        return form
+    if isinstance(contact_form, HttpResponseRedirect):
+        return contact_form
 
     return render(
         request,
         "jprice/index.html",
         {
-            "projects": projects,
-            "posts": posts,
-            "form": form,
+            "projects": featured_projects,
+            "posts": latest_posts,
+            "technologies": technologies,
+            "contact_form": contact_form,
         },
     )
 

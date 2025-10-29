@@ -26,14 +26,12 @@ class PostAdmin(admin.ModelAdmin):
     form = PostAdminForm
     list_display = (
         "title",
-        "created_at",
-        "updated_at",
+        "slug",
         "published_at",
     )
     list_filter = (
-        "created_at",
-        "updated_at",
         "topics",
+        "published_at",
     )
     search_fields = (
         "title",

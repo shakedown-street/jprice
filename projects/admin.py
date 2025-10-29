@@ -30,10 +30,14 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "slug",
-        "created_at",
-        "updated_at",
         "published_at",
+        "is_featured",
     )
-    list_filter = ("technologies",)
+    list_filter = (
+        "technologies",
+        "type",
+        "published_at",
+        "is_featured",
+    )
     search_fields = ("name",)
     prepopulated_fields = {"slug": ("name",)}
