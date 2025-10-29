@@ -1,22 +1,19 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse
 
-from .forms import ContactForm
+from .forms import handle_contact_form
 
 
 def index(request):
-    if request.method == "POST":
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse("contact:submitted"))
-    else:
-        form = ContactForm()
+    form = handle_contact_form(request)
+
+    if isinstance(form, HttpResponseRedirect):
+        return form
 
     context = {
         "form": form,
     }
+
     return render(request, "contact/index.html", context)
 
 

@@ -9,4 +9,4 @@ class Contact(TimestampMixin):
     message = models.TextField(max_length=1024)
 
     def __str__(self):
-        return f"{self.name}: {self.subject}"
+        return f"{self.name}"

@@ -30,7 +30,7 @@
 :root {
   --sans-font: 'Helvetica', 'Arial', sans-serif;
   --mono-font: Consolas, Menlo, Monaco, 'Ubuntu Mono', monospace;
-  --background: ;
+  --background: oklch(21% 0.034 264.665);
   --foreground: oklch(87.2% 0.01 258.338);
   --muted-foreground: oklch(70.7% 0.022 261.325);
   --primary: oklch(84.5% 0.143 164.978);
