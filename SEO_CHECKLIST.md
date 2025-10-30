@@ -47,7 +47,7 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 - [ ] **Lazy-load** below-the-fold images
 - [ ] **Security Headers**
   - [ ] `Strict-Transport-Security`
-  - [ ] `X-Content-Type-Options: nosniff`
+  - [x] `X-Content-Type-Options: nosniff`
   - [ ] `Referrer-Policy: strict-origin-when-cross-origin`
 
 ---
@@ -55,13 +55,13 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 ## 📊 Analytics & Indexing
 
 - [ ] **Google Analytics** tag installed (or Plausible/other)
-- [ ] **Google Search Console** property verified
-- [ ] **Bing Webmaster Tools** property verified
-- [ ] **Submit sitemap URL** to both consoles
+- [x] **Google Search Console** property verified
+- [x] **Bing Webmaster Tools** property verified
+- [x] **Submit sitemap URL** to both consoles
 - [ ] **Open Graph validation**
-  - [ ] [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+  - [x] [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
   - [ ] [Twitter Card Validator](https://cards-dev.twitter.com/validator)
-- [ ] Test rich results with [Google Rich Results Test](https://search.google.com/test/rich-results)
+- [x] Test rich results with [Google Rich Results Test](https://search.google.com/test/rich-results)
 
 ---
 
@@ -78,10 +78,10 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 
 ## After Launch
 
-- [ ] Rewrite favicon and robots.txt from static files to root
+- [x] Rewrite favicon and robots.txt from static files to root
 - [ ] Update any placeholder or domain URLs to live domain
-  - [ ] Meta tags
-  - [ ] Sitemap URLs
+  - [x] Meta tags
+  - [x] Sitemap URLs
   - [ ] Canonical URLs
-  - [ ] robots.txt
-- [ ] Update any relative URLs to absolute if needed
+  - [x] robots.txt
+- [x] Update any relative URLs to absolute if needed
