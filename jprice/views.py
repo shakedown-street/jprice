@@ -28,5 +28,5 @@ def index(request):
     )
 
 
-def poorman(request):
-    return render(request, "jprice/poorman.html")
+def styleguide(request):
+    return render(request, "jprice/styleguide.html")

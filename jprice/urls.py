@@ -22,7 +22,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
 from .sitemap import sitemaps
-from .views import index, poorman
+from .views import index, styleguide
 
 urlpatterns = [
     path("", index, name="index"),
@@ -30,7 +30,7 @@ urlpatterns = [
     path("contact/", include("contact.urls")),
     path("projects/", include("projects.urls")),
     path("resume/", include("resume.urls")),
-    path("poorman/", poorman),
+    path("styleguide/", styleguide),
     path("admin/", admin.site.urls),
     path(
         "sitemap.xml",
