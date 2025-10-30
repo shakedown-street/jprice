@@ -126,15 +126,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "dev" / "static"
 STATICFILES_DIRS = [BASE_DIR / "jprice" / "static"]
 
 # Media files
 
 MEDIA_URL = "media/"
-MEDIA_ROOT = BASE_DIR / "jprice" / "media"
+MEDIA_ROOT = BASE_DIR / "dev" / "media"
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# CSRF
+# https://docs.djangoproject.com/en/4.2/ref/settings/#csrf-cookie-age
+
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(",")
