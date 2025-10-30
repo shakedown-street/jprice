@@ -16,15 +16,12 @@
           <a href="{% url 'blog:detail' post.slug %}">
             <h3>{{ post.title }}</h3>
           </a>
-          <small>{{ post.published_at | date:"M d, Y" }}</small>
-          {% if not post.is_published %}<span class="badge badge-warning">Unpublished</span>{% endif %}
-        </header>
-        <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
-        <footer>
+          <p>{{ post.published_at | date:"M d, Y" }}</p>
           <div class="badge-list">
             {% for topic in post.topics.all %}<div class="badge">{{ topic.name }}</div>{% endfor %}
           </div>
-        </footer>
+        </header>
+        <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
       </article>
     {% endfor %}
   {% else %}

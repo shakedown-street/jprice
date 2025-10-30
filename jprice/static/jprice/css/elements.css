@@ -18,12 +18,6 @@
   --border-radius: 0.25rem;
   --border-width: 1px;
   --disabled: oklch(86.9% 0.022 252.894);
-  --alt-table-row-background: oklch(92.9% 0.013 255.508);
-  --badge-background: var(--foreground);
-  --badge-foreground: var(--background);
-  --callout-background: oklch(97.9% 0.021 166.113);
-  --callout-border: oklch(59.6% 0.145 163.225);
-  --callout-foreground: oklch(59.6% 0.145 163.225);
   --code: oklch(64.5% 0.246 16.439);
   --mark: oklch(96.2% 0.059 95.617);
 } */
@@ -37,17 +31,11 @@
   --muted-foreground: oklch(70.7% 0.022 261.325);
   --primary: oklch(84.5% 0.143 164.978);
   --primary-foreground: var(--background);
-  --primary-hover: oklch(90.5% 0.093 164.15);
+  --primary-hover: oklch(76.5% 0.177 163.223);
   --border: oklch(37.3% 0.034 259.733);
   --border-radius: 0.25rem;
   --border-width: 1px;
   --disabled: oklch(44.6% 0.03 256.802);
-  --alt-table-row-background: oklch(27.8% 0.033 256.848);
-  --badge-background: var(--foreground);
-  --badge-foreground: var(--background);
-  --callout-background: oklch(97.9% 0.021 166.113);
-  --callout-border: oklch(59.6% 0.145 163.225);
-  --callout-foreground: oklch(59.6% 0.145 163.225);
   --code: oklch(71.2% 0.194 13.428);
   --mark: oklch(96.2% 0.059 95.617);
 }
@@ -93,7 +81,7 @@ body {
   gap: 2rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 48rem) {
   .nav-content {
     flex-direction: column;
     height: auto;
@@ -114,7 +102,6 @@ body {
 .nav-links ul {
   align-items: center;
   display: flex;
-  justify-content: center;
   list-style-type: none;
   gap: 1rem;
   margin: 0;
@@ -139,7 +126,7 @@ body {
 .nav-links li[data-active='true'] a,
 .nav-links li[data-active='true'] a:visited,
 .nav-links li[data-active='true'] a:hover {
-  border-color: 2px solid var(--primary);
+  border-color: var(--border-width) solid var(--primary);
   color: var(--primary);
 }
 
@@ -208,7 +195,7 @@ input[type='reset']:enabled:hover {
 .button:focus-visible,
 button:focus-visible:where(:enabled),
 input:enabled:focus-visible:where([type='button'], [type='submit'], [type='reset']) {
-  outline: 2px solid var(--primary);
+  outline: var(--border-width) solid var(--primary);
   outline-offset: 1px;
 }
 
@@ -296,12 +283,12 @@ th {
 }
 
 th {
-  background-color: var(--alt-table-row-background);
+  background-color: var(--muted);
   font-weight: bold;
 }
 
 tr:nth-child(even) {
-  background-color: var(--alt-table-row-background);
+  background-color: var(--muted);
 }
 
 table caption {
@@ -545,7 +532,7 @@ dialog::backdrop {
   opacity: 0.8;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 48rem) {
   dialog {
     max-width: calc(100vw - 2rem);
   }
@@ -573,9 +560,9 @@ sub {
 }
 
 .badge {
-  background-color: var(--badge-background);
+  border: var(--border-width) solid var(--border);
   border-radius: 2rem;
-  color: var(--badge-foreground);
+  color: var(--muted-foreground);
   display: inline-block;
   font-size: 0.75rem;
   font-weight: bold;
@@ -585,23 +572,20 @@ sub {
 }
 
 .badge-warning {
-  background-color: oklch(95.4% 0.038 75.164);
-  color: oklch(64.6% 0.222 41.116);
+  border-color: oklch(64.6% 0.222 41.116);
 }
 
 .callout {
-  background-color: var(--callout-background);
-  border: var(--border-width) solid var(--callout-border);
+  background-color: var(--muted);
+  border: var(--border-width) solid var(--primary);
   border-radius: 0.25rem;
-  color: var(--callout-foreground);
+  color: var(--foreground);
   padding: 0.5rem 1rem;
   width: 100%;
 }
 
 .callout-warning {
-  background-color: oklch(98% 0.016 73.684);
   border-color: oklch(64.6% 0.222 41.116);
-  color: oklch(64.6% 0.222 41.116);
 }
 
 .container {
@@ -618,6 +602,12 @@ sub {
   margin: 1rem 0;
 }
 
+.contact-form-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-form {
   background-color: var(--muted);
   border-radius: var(--border-radius);
@@ -632,6 +622,11 @@ sub {
 .contact-form h2 {
   margin: 0;
   text-align: center;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
 }
 
 .contact-form input {

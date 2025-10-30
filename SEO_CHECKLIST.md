@@ -26,9 +26,9 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 ## 📄 Content & On-Page
 
 - [ ] **Unique titles & meta descriptions** for each page
-- [ ] **H1 tag** present and descriptive on every page
+- [x] **H1 tag** present and descriptive on every page
 - [x] **Alt text** on all meaningful images
-- [ ] **Internal linking** between blog posts, case studies, and main pages
+- [x] **Internal linking** between blog posts, case studies, and main pages
 - [x] **Readable URLs** — lowercase, hyphen-separated, no query junk
 - [ ] **Initial content** — at least 3 case studies + 3 blog posts live
 
@@ -78,8 +78,10 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 
 ## After Launch
 
-- [ ] Update any placeholder domain URLs to live domain
+- [ ] Rewrite favicon and robots.txt from static files to root
+- [ ] Update any placeholder or domain URLs to live domain
   - [ ] Meta tags
   - [ ] Sitemap URLs
   - [ ] Canonical URLs
   - [ ] robots.txt
+- [ ] Update any relative URLs to absolute if needed

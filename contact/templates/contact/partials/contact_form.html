@@ -1,6 +1,5 @@
 <form class="contact-form" action="{% url 'contact:index' %}" method="post">
   {% csrf_token %}
-  <h2>Contact</h2>
   {{ form }}
   <button type="submit">Submit</button>
 </form>

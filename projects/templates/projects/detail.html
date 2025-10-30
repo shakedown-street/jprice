@@ -14,10 +14,13 @@
   {% endif %}
   <a href="{% url 'projects:index' %}">&larr; Back to projects</a>
   <h1>{{ project.name }}</h1>
+  <p>
+    <strong>Type:</strong> {{ project.type }}
+  </p>
   <div class="badge-list">
     {% for technology in project.technologies.all %}<div class="badge">{{ technology.name }}</div>{% endfor %}
   </div>
-  <nav>
+  <nav class="nav-links" style="margin-top: 1rem;">
     <ul>
       {% if project.github_url %}
         <li>

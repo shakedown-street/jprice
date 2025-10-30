@@ -21,13 +21,11 @@
           <a href="{% url 'projects:detail' project.slug %}">
             <h3>{{ project.name }}</h3>
           </a>
-        </header>
-        <p>{{ project.description }}</p>
-        <footer>
           <div class="badge-list">
             {% for technology in project.technologies.all %}<div class="badge">{{ technology.name }}</div>{% endfor %}
           </div>
-        </footer>
+        </header>
+        <p>{{ project.description }}</p>
       </article>
     {% endfor %}
     <a href="{% url 'projects:index' %}">See all projects</a>
@@ -40,16 +38,12 @@
           <a href="{% url 'blog:detail' post.slug %}">
             <h3>{{ post.title }}</h3>
           </a>
-          <div>
-            <small>{{ post.published_at | date:"M d, Y" }}</small>
-          </div>
-        </header>
-        <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
-        <footer>
+          <p>{{ post.published_at | date:"M d, Y" }}</p>
           <div class="badge-list">
             {% for topic in post.topics.all %}<div class="badge">{{ topic.name }}</div>{% endfor %}
           </div>
-        </footer>
+        </header>
+        <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
       </article>
     {% endfor %}
     <a href="{% url 'blog:index' %}">See all posts</a>
@@ -61,8 +55,11 @@
     </div>
   </section>
   <section>
+    <div class="contact-form-wrapper">
+      <h2>Contact Me</h2>
 
-    {% include 'contact/partials/contact_form.html' with form=contact_form %}
+      {% include 'contact/partials/contact_form.html' with form=contact_form %}
 
+    </div>
   </section>
 {% endblock %}
