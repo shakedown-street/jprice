@@ -2,8 +2,12 @@
   "name": "Jordan Price Portfolio",
   "short_name": "Jordan Price",
   "icons": [
-    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "https://djangoweb.dev/static/jprice/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    { "src": "https://djangoweb.dev/static/jprice/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
   ],
   "theme_color": "#5ee9b5",
   "background_color": "#101828",

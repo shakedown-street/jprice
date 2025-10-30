@@ -36,7 +36,7 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 
 ## ⚙️ Technical Quality
 
-- [ ] **HTTPS** enforced (redirect HTTP → HTTPS)
+- [x] **HTTPS** enforced (redirect HTTP → HTTPS)
 - [ ] **Custom 404 page** returns proper 404 status
 - [ ] **Mobile-friendly** verified via Google test
 - [ ] **Core Web Vitals**
