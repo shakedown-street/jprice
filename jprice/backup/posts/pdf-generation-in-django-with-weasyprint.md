@@ -1,14 +1,10 @@
-## Introduction
+This post covers how to build PDF documents with HTML and CSS and return them as regular Django views using [WeasyPrint](https://weasyprint.org/). You can use this technique to generate invoices, reports, resumes, or any other document that needs to be presented in a printable format. You can pass Django template context, use the [Django template language](https://docs.djangoproject.com/en/5.2/topics/templates/#the-django-template-language), use static files, and style the document with CSS, just like a regular web page.
 
-Briefly introduce:
-
-- What this post covers
-- Why it matters in a Django context
-- Any assumptions or prerequisites (e.g., familiarity with Django basics, Python 3.x, etc.)
+In this tutorial, I will assume you have a basic understanding of Django, including views, templates, static files, and URL routing.
 
 ---
 
-## ⚙️ Background / Concepts
+## Background / Concepts
 
 Explain the underlying concept:
 

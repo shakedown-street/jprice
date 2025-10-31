@@ -38,7 +38,7 @@
     </ul>
   </nav>
   <hr />
-  {{ project.content | markdown | safe }}
+  {{ project.content | markdown }}
 {% endblock %}
 {% block extra_script %}
   <script src="{% static 'utils/prism.js' %}"></script>

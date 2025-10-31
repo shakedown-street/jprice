@@ -1,26 +1,24 @@
-For a system to be scalable means that it can handle increased load, data, and users efficiently without a drop in perormance or requiring a complete redesign.
+For a system to be scalable means that it can handle increased load, data, and users efficiently without a drop in performance or requiring a complete redesign.
 
 There are two ways to scale a system:
 
-1. **Scale Vertically** (Scaling Up): Adding more power to a single machine
+1. **Scale Vertically** (Scaling Up): Increasing power to a single machine
 
-   Example: Upgrading a backend server from 4GB RAM to 8GB RAM or from 2 CPU cores to 4 CPU cores.
+   - Pros: Easier to implement and manage
+   - Cons: Limited by the maximum capacity of a single machine and can lead to downtime during upgrades
 
-   - Pros: Simple to implement
-   - Cons: There's a hardware limit to how much you can scale vertically, and it can be expensive.
+> Example: Upgrading a backend server from 2 CPU cores/4GB RAM to 4 CPU cores/8GB RAM.
 
-2. **Scale Horizontally** (Scaling Out): Adding more machines to the system
+2. **Scale Horizontally** (Scaling Out): Adding more machines to distribute the load
 
-   Example: Instead of one large server, use multiple smaller servers (e.g. load balancer, web server, database server)
+   - Pros: Not limited by a single machine's capacity, better fault tolerance
+   - Cons: More complex to implement and manage
 
-   - Pros: Can scale infinitely and is more fault tolerant
-   - Cons: More complex to monitor and implement
+> Example: Adding more backend servers to handle incoming requests.
 
 ---
 
 To scale a web app horizontally, you can add more servers behind a **load balancer**.
-
-What is load balancing?
 
 Load balancing is the process of distributing incoming network traffic across multiple servers.
 
@@ -38,7 +36,7 @@ To scale a load balanced system, you can add more servers to the pool, or scale 
 
 ---
 
-### Scenario:
+## Scenario
 
 - We will have two backend web servers running the application (such as a django backend)
 - We will use Nginx as a reverse proxy to distribute traffic between the two servers
@@ -71,9 +69,7 @@ http {
 
 Now, making a request to the nginx server's IP will distribute the traffic between the two backend servers using Round Robin.
 
----
-
-Other configurations:
+#### Other configurations
 
 1. IP Hash: Ensures that the same client IP always goes to the same server
 
@@ -96,6 +92,8 @@ Other configurations:
 
 ---
 
+## Architecture
+
 In the above scenario, both backend servers would be running the same code, and connecting to the same database server. Ideally the database should be hosted on a separate dedicated server so that it can be scaled independently from the backend servers as well. This could be an additional droplet or a service such as DigitalOcean's Managed Databases or RDS in AWS. Database servers can have their own scaling strategies such as read replicas, sharding, or vertical scaling which we probably won't get into here.
 
 ```less
@@ -117,6 +115,8 @@ Backend servers should typically have similar specs to ensure that they can hand
 
 ---
 
+## Cost Considerations
+
 This next part isn't an exact science, but here's a rough idea of how you might calculate the cost of a setup like this.
 
 Lets say we're not using a managed DB and it's just on it's own droplet. Lets also say that our hosting company offers 4 droplet sizes at the following costs: $5, $10, $15, and $20 per month.
@@ -131,6 +131,8 @@ Of course, in the real world you would need to adjust based on monitoring resour
 
 ---
 
+## When to Use Load Balancing
+
 When would load balancing not be necessary?
 
 - Low traffic
@@ -142,3 +144,9 @@ When should you consider load balancing?
 - You expect moderate traffic and want to future-proof
 - You want to ensure better performance
 - You want to ensure high availability and fault tolerance
+
+---
+
+## Summary
+
+Load balancing is a powerful technique for scaling web applications horizontally. By distributing traffic across multiple backend servers, you can improve performance, ensure high availability, and handle increased load effectively. Nginx is a popular choice for implementing load balancing due to its flexibility and ease of use. When designing a load balanced architecture, consider the specific needs of your application, including traffic patterns, resource requirements, and cost considerations.
