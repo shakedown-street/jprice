@@ -1,14 +1,4 @@
-# 🧩 Project Title
-
-**Type:** (Client Project / Personal Project / Open Source)
-
-**Tech Stack:** Django · React · TailwindCSS · Postgres (edit as needed)
-
-**Date:** Month YYYY
-
----
-
-## 📖 Overview
+## Overview
 
 Brief summary (2–4 sentences) describing:
 
@@ -23,7 +13,7 @@ _Example:_
 
 ---
 
-## 🎯 Goals & Challenges
+## Goals & Challenges
 
 Outline the project’s main goals and any notable challenges or constraints.
 
@@ -41,7 +31,7 @@ Outline the project’s main goals and any notable challenges or constraints.
 
 ---
 
-## 🧠 Approach & Implementation
+## Approach & Implementation
 
 Explain how you approached the project. This section should show your reasoning, not just what you built.
 
@@ -57,7 +47,7 @@ _Example:_
 
 ---
 
-## 💡 Key Features
+## Key Features
 
 List the most notable features — ideally user-facing, but technical ones are fine too.
 
@@ -69,7 +59,7 @@ List the most notable features — ideally user-facing, but technical ones are f
 
 ---
 
-## 🧩 Technical Highlights
+## Technical Highlights
 
 Show off a few details that set your implementation apart — performance tricks, clever patterns, or integrations.
 
@@ -79,7 +69,7 @@ Show off a few details that set your implementation apart — performance tricks
 
 ---
 
-## 📊 Results & Impact
+## Results & Impact
 
 Quantify where possible — metrics, outcomes, or qualitative feedback.
 
@@ -90,24 +80,10 @@ Quantify where possible — metrics, outcomes, or qualitative feedback.
 
 ---
 
-## 🧭 Lessons Learned
+## Lessons Learned
 
 Reflect on what you took away from the project — technical or process-based.
 
 _Example:_
 
 > I learned to balance technical ambition with pragmatic constraints. Early architecture planning saved time later, and using TypeScript would have prevented minor runtime bugs.
-
----
-
-## 🖼️ Visuals
-
-Include screenshots, diagrams, or UI previews (optional but highly recommended):
-
----
-
-## 🔗 Related Links
-
-- Blog post or write-up: [How I built the project](https://example.com/blog/project)
-- Demo video or presentation
-- Related open-source repos
