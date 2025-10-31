@@ -4,10 +4,6 @@ __pycache__
 ### Sqlite
 *.sqlite3
 
-### Media files
-jprice/media/*
-!jprice/media/.gitkeep
-
 ### Testing
 .coverage
 htmlcov
