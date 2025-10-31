@@ -32,7 +32,6 @@ def markdown(value):
         md.markdown(
             value,
             extensions=["markdown.extensions.fenced_code"],
-            safe_mode=True,
         )
     )
 
