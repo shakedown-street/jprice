@@ -1,4 +1,4 @@
-This post covers how to build your own minimal markdown rendering solution in Django using the [Markdown](https://pypi.org/project/Markdown/) package, along with syntax highlighting using Prism.js and a CodeMirror field widget for editing markdown content. We will be building the exact solution used on this site for blog posts and project pages.
+This post covers how to build a minimal markdown rendering solution in Django using the [Markdown](https://pypi.org/project/Markdown/) package, along with syntax highlighting using Prism.js and a CodeMirror field widget for editing markdown content. We will be building the exact solution used on this site for blog posts and project pages.
 
 In this post, I will assume you have a working Django project and app already set up, and have basic understanding of Django models, forms, templates, static files, and template tags.
 
@@ -71,11 +71,11 @@ Just like that we have markdown rendering in our Django templates!
 
 ---
 
-## Syntax Highlighting
+### Syntax Highlighting
 
 To add syntax highlighting for code blocks. Download and include the [Prism.js](https://prismjs.com/download) CSS and JS files in your static files. You can chose the languages, themes and plugins you want to include. Additional themes can be found [here](https://github.com/PrismJS/prism-themes).
 
-In your base template, include the Prism CSS and JS files:
+In your template, include the Prism CSS and JS files:
 
 ```html
 {% load static %}
@@ -88,7 +88,7 @@ You could put this in your base template so it's available site-wide, but I like
 
 ---
 
-## CodeMirror Form Widget
+### CodeMirror Form Widget
 
 **Note**: This section assumes you have jQuery available in your admin or form pages. If you don't, you can modify the JS code to use vanilla JS or another library of your choice.
 

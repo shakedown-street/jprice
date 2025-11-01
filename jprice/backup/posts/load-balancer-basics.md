@@ -2,17 +2,19 @@ For a system to be scalable means that it can handle increased load, data, and u
 
 There are two ways to scale a system:
 
-1. **Scale Vertically** (Scaling Up): Increasing power to a single machine
+### 1. Vertically (Scaling Up): Increase power to a single machine
 
-   - Pros: Easier to implement and manage
-   - Cons: Limited by the maximum capacity of a single machine and can lead to downtime during upgrades
+**Pros**: Easier to implement and manage
+
+**Cons**: Limited by the maximum capacity of a single machine and can lead to downtime during upgrades
 
 > Example: Upgrading a backend server from 2 CPU cores/4GB RAM to 4 CPU cores/8GB RAM.
 
-2. **Scale Horizontally** (Scaling Out): Adding more machines to distribute the load
+### 2. Horizontally (Scaling Out): Add more machines to distribute the load
 
-   - Pros: Not limited by a single machine's capacity, better fault tolerance
-   - Cons: More complex to implement and manage
+**Pros**: Not limited by a single machine's capacity, better fault tolerance
+
+**Cons**: More complex to implement and manage
 
 > Example: Adding more backend servers to handle incoming requests.
 
