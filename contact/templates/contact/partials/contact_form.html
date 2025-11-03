@@ -1,7 +1,11 @@
 {% for field in form %}
-  <div class="pw-form-group">
-    {{ field.label_tag }}
+  {% if field.name != 'website_url' %}
+    <div class="pw-form-group">
+      {{ field.label_tag }}
+      {{ field }}
+      {{ field.errors }}
+    </div>
+  {% else %}
     {{ field }}
-    {{ field.errors }}
-  </div>
+  {% endif %}
 {% endfor %}

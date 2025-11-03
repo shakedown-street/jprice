@@ -6,6 +6,9 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
+    # Honeypot field
+    website_url = forms.CharField(required=False, widget=forms.HiddenInput)
+
     template_name = "contact/partials/contact_form.html"
 
     class Meta:
@@ -20,6 +23,15 @@ class ContactForm(forms.ModelForm):
             "email": forms.EmailInput(attrs={"class": "fluid"}),
             "message": forms.Textarea(attrs={"class": "resize-y", "cols": 30}),
         }
+
+    def clean_website_url(self):
+        # Reject submissions where the honeypot field is filled out
+        value = self.cleaned_data.get("website_url")
+
+        if value:
+            raise forms.ValidationError("Bot detected.")
+
+        return value
 
 
 def handle_contact_form(request) -> ContactForm | HttpResponseRedirect:
