@@ -52,7 +52,7 @@ I built PunkwebBB because I wanted to a Django forum solution that was truly sta
 
 ## Results & Impact
 
-While PunkwebBB has not yet seen widespread adoption, it has received interest from Django developers seeking a lightweight forum solution. The project is stable but continues to receive updates some-what regularly. It remains as my most starred open-source project on GitHub. Future plans include adding more configuration options and improving documentation.
+While PunkwebBB has not yet seen widespread adoption, it has received interest from Django developers seeking a lightweight forum solution. The project is stable but continues to receive updates some-what regularly. It remains as my most starred open source project on GitHub. Future plans include adding more configuration options and improving documentation.
 
 ---
 
