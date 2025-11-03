@@ -5,12 +5,17 @@ from .forms import handle_contact_form
 
 
 def index(request):
+    title = "Contact | Jordan Price"
+    description = "Get in touch with Jordan Price for inquiries or feedback."
+
     form = handle_contact_form(request)
 
     if isinstance(form, HttpResponseRedirect):
         return form
 
     context = {
+        "title": title,
+        "description": description,
         "form": form,
     }
 
@@ -18,4 +23,14 @@ def index(request):
 
 
 def submitted(request):
-    return render(request, "contact/submitted.html")
+    title = "Thank You! | Jordan Price"
+    description = (
+        "Thank you for reaching out to Jordan Price. Your message has been received."
+    )
+
+    context = {
+        "title": title,
+        "description": description,
+    }
+
+    return render(request, "contact/submitted.html", context)

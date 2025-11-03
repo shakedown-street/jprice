@@ -1,6 +1,6 @@
 ## Overview
 
-A scheduling application built for Whole Child Therapy, a provider of pediatric therapy services. They needed a tool to replace their increasingly unmanageable spreadsheet based scheduling system. Previously it would take them several weeks to complete their quarterly schedule, and required a lot of training for their staff to create a conflict free schedule. I was responsible for the full-stack development, including project planning, backend architecture, frontend design, and deployment.
+A scheduling application built for Whole Child Therapy, a provider of pediatric therapy services. They needed a tool to replace their increasingly unmanageable spreadsheet based scheduling system. Previously it would take them several weeks to complete their quarterly schedule, and required a lot of training for their staff to create a conflict free schedule. I was responsible for the development, including project planning, backend architecture, frontend design, and deployment.
 
 ---
 
