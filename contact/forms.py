@@ -21,7 +21,7 @@ class ContactForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(attrs={"class": "fluid"}),
             "email": forms.EmailInput(attrs={"class": "fluid"}),
-            "message": forms.Textarea(attrs={"class": "resize-y", "cols": 30}),
+            "message": forms.Textarea(attrs={"class": "resize-y fluid"}),
         }
 
     def clean_website_url(self):
