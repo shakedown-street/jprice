@@ -3,13 +3,11 @@
 {% load static %}
 
 {% block content %}
-  <section>
-    <div class="callout">
-      <h3>Thank you for getting in touch!</h3>
-      <p>
-        I appreciate you reaching out. I'll review your message and get back to you as soon as possible.
-        In the meantime, feel free to explore my projects and blog posts.
-      </p>
-    </div>
-  </section>
+  <div class="pw-callout p-8">
+    <h1>Thank you!</h1>
+    <p class="mb-0">
+      I appreciate you reaching out. I'll review your message and get back to you as soon as possible.
+      In the meantime, feel free to explore my <a href="{% url 'projects:index' %}">projects</a> and <a href="{% url 'blog:index' %}">blog</a>.
+    </p>
+  </div>
 {% endblock %}

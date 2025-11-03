@@ -1,0 +1,15 @@
+{% load markdown %}
+
+<article class="pw-card">
+  <header>
+    <a href="{% url 'projects:detail' project.slug %}">
+      <h4>{{ project.name }}</h4>
+    </a>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {% for technology in project.technologies.all %}
+        <div class="pw-badge xs rounded">{{ technology.name }}</div>
+      {% endfor %}
+    </div>
+  </header>
+  <p class="mb-0">{{ project.description }}</p>
+</article>

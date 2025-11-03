@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,12 +70,13 @@
           sizes="512x512"
           href="{% static "jprice/android-chrome-512x512.png" %}" />
     <link rel="manifest" href={% static "jprice/site.webmanifest" %} />
-    <link rel="stylesheet" href="{% static 'jprice/css/elements.css' %}" />
+    <link rel="stylesheet" href="{% static 'jprice/css/punkweb-ui.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'jprice/css/styles.css' %}" />
     {% block extra_head %}{% endblock %}
   </head>
   <body>
     <header class="nav">
-      <div class="nav-content container">
+      <div class="nav-content pw-container">
         <div class="nav-main">
           <a href="{% url 'index' %}">
             <img class="nav-logo"
@@ -111,7 +112,7 @@
         </nav>
       </div>
     </header>
-    <main class="container">
+    <main class="pw-container">
       {% block content %}{% endblock %}
     </main>
     <footer>

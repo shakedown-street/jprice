@@ -1,5 +1,7 @@
-<form class="contact-form" action="{% url 'contact:index' %}" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">Submit</button>
-</form>
+{% for field in form %}
+  <div class="pw-form-group">
+    {{ field.label_tag }}
+    {{ field }}
+    {{ field.errors }}
+  </div>
+{% endfor %}

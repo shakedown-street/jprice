@@ -6,40 +6,44 @@
 {% block extra_head %}
   <link rel="stylesheet" href="{% static 'utils/prism-duotone-sea.css' %}" />
 {% endblock %}
-{% block content %}
-  {% if not project.is_published %}
-    <div class="callout callout-warning" style="margin: 2rem 0;">
-      <p>This project has not been published yet.</p>
-    </div>
-  {% endif %}
-  <a href="{% url 'projects:index' %}">&larr; Back to projects</a>
-  <h1>{{ project.name }}</h1>
-  <div class="badge-list" style="margin-bottom: 1rem;">
-    {% for technology in project.technologies.all %}<div class="badge">{{ technology.name }}</div>{% endfor %}
-  </div>
-  <p>
-    <strong>Type:</strong> {{ project.type }}
-  </p>
-  <p>
-    <strong>Links:</strong>
-  </p>
-  <nav style="margin-top: 1rem;">
-    <ul>
-      {% if project.github_url %}
-        <li>
-          <a href="{{ project.github_url }}" target="_blank">GitHub</a>
-        </li>
-      {% endif %}
-      {% if project.website_url %}
-        <li>
-          <a href="{{ project.website_url }}" target="_blank">Website</a>
-        </li>
-      {% endif %}
-    </ul>
-  </nav>
-  <hr />
-  {{ project.content | markdown }}
-{% endblock %}
 {% block extra_script %}
   <script src="{% static 'utils/prism.js' %}"></script>
+{% endblock %}
+{% block content %}
+  <a class="block mb-4" href="{% url 'projects:index' %}">&larr; Back to projects</a>
+  {% if not project.is_published %}
+    <div class="pw-callout mb-4">
+      <p class="my-0">This project has not been published yet.</p>
+    </div>
+  {% endif %}
+  <article>
+    <header>
+      <h1>{{ project.name }}</h1>
+      <div class="flex flex-wrap gap-2 mb-4">
+        {% for technology in project.technologies.all %}<div class="pw-badge rounded">{{ technology.name }}</div>{% endfor %}
+      </div>
+      <div>
+        <strong>Type:</strong> {{ project.type }}
+      </div>
+      <div>
+        <strong>Links:</strong>
+      </div>
+      <nav>
+        <ul>
+          {% if project.github_url %}
+            <li>
+              <a href="{{ project.github_url }}" target="_blank">GitHub</a>
+            </li>
+          {% endif %}
+          {% if project.website_url %}
+            <li>
+              <a href="{{ project.website_url }}" target="_blank">Website</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <hr />
+    {{ project.content | markdown }}
+  </article>
 {% endblock %}

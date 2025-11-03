@@ -44,10 +44,10 @@ def pdf_response(request, template, *args, **kwargs):
     html_template = get_template(template)
     rendered_html = html_template.render(context).encode(encoding="UTF-8")
 
-    pdf_file = HTML(
+    pdf_document = HTML(
         string=rendered_html, base_url=request.build_absolute_uri()
     ).write_pdf()
-    response = HttpResponse(pdf_file, content_type="application/pdf")
+    response = HttpResponse(pdf_document, content_type="application/pdf")
     response["Content-Disposition"] = '{}; filename="{}"'.format(disposition, filename)
 
     return response

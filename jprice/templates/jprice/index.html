@@ -3,7 +3,7 @@
 {% load markdown static %}
 
 {% block content %}
-  <section>
+  <section class="mb-8">
     <h1>Jordan Price</h1>
     <h3>Software & Web Developer</h3>
     <p>
@@ -13,53 +13,47 @@
       efficient solutions that deliver real impact without wasted effort.
     </p>
   </section>
-  <section>
-    <h2>Projects</h2>
-    {% for project in projects %}
-      <article>
-        <header>
-          <a href="{% url 'projects:detail' project.slug %}">
-            <h3>{{ project.name }}</h3>
-          </a>
-          <div class="badge-list">
-            {% for technology in project.technologies.all %}<div class="badge">{{ technology.name }}</div>{% endfor %}
-          </div>
-        </header>
-        <p>{{ project.description }}</p>
-      </article>
-    {% endfor %}
-    <a href="{% url 'projects:index' %}">See all projects</a>
-  </section>
-  <section>
-    <h2>Blog</h2>
-    {% for post in posts %}
-      <article>
-        <header>
-          <a href="{% url 'blog:detail' post.slug %}">
-            <h3>{{ post.title }}</h3>
-          </a>
-          <p>{{ post.published_at | date:"M d, Y" }}</p>
-          <div class="badge-list">
-            {% for topic in post.topics.all %}<div class="badge">{{ topic.name }}</div>{% endfor %}
-          </div>
-        </header>
-        <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
-      </article>
-    {% endfor %}
-    <a href="{% url 'blog:index' %}">See all posts</a>
-  </section>
-  <section>
+  <section class="mb-8">
     <h2>Skills</h2>
-    <div class="badge-list">
-      {% for technology in technologies %}<div class="badge">{{ technology.name }}</div>{% endfor %}
+    <div class="flex flex-wrap gap-2">
+      {% for technology in technologies %}<div class="pw-badge rounded">{{ technology.name }}</div>{% endfor %}
     </div>
   </section>
+  <section class="mb-8">
+    <h2>Projects</h2>
+    <div class="grid grid-cols-3 gap-4">
+      {% for project in projects %}
+
+        {% include 'projects/partials/project_card.html' %}
+
+      {% endfor %}
+    </div>
+    <a class="pw-button mt-4" href="{% url 'projects:index' %}">See all projects</a>
+  </section>
+  <section class="mb-8">
+    <h2>Blog</h2>
+    <div class="grid grid-cols-3 gap-4">
+      {% for post in posts %}
+
+        {% include 'blog/partials/post_card.html' %}
+
+      {% endfor %}
+    </div>
+    <a class="pw-button mt-4" href="{% url 'blog:index' %}">See all posts</a>
+  </section>
+  <hr />
   <section>
-    <div class="contact-form-wrapper">
+    <div class="flex flex-col items-center">
       <h2>Contact Me</h2>
-
-      {% include 'contact/partials/contact_form.html' with form=contact_form %}
-
+      <div class="pw-card">
+        <form class="pw-form" action="{% url 'contact:index' %}" method="post">
+          {% csrf_token %}
+          {{ contact_form }}
+          <div class="pw-form-actions">
+            <button class="pw-button fluid primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 {% endblock %}

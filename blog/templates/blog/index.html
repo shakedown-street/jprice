@@ -5,28 +5,23 @@
 {% block title_suffix %}| Blog{% endblock %}
 {% block content %}
   <h1>Blog</h1>
-  <form class="blog-form" action="{% url 'blog:index' %}" method="get">
-    {% for field in form %}{{ field }}{% endfor %}
-    <button type="submit">Search</button>
+  <form class="pw-form horizontal mb-4"
+        action="{% url 'blog:index' %}"
+        method="get">
+    {{ form }}
+    <div class="pw-form-actions">
+      <button type="submit">Search</button>
+    </div>
   </form>
   {% if posts %}
-    {% for post in posts %}
-      <article>
-        <header>
-          <a href="{% url 'blog:detail' post.slug %}">
-            <h3>{{ post.title }}</h3>
-          </a>
-          <p>{{ post.published_at | date:"M d, Y" }}</p>
-          <div class="badge-list">
-            {% for topic in post.topics.all %}<div class="badge">{{ topic.name }}</div>{% endfor %}
-          </div>
-        </header>
-        <p>{{ post.content | unmarkdown | truncatewords:60 }}</p>
-      </article>
-    {% endfor %}
-  {% else %}
-    <div>
-      <p>No post matches the given query.</p>
+    <div class="flex flex-col gap-4">
+      {% for post in posts %}
+
+        {% include 'blog/partials/post_card.html' %}
+
+      {% endfor %}
     </div>
+  {% else %}
+    <p>No post matches the given query.</p>
   {% endif %}
 {% endblock %}

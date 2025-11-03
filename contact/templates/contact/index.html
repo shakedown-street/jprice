@@ -3,10 +3,16 @@
 {% load static %}
 
 {% block content %}
-  <div class="contact-form-wrapper">
+  <div class="flex flex-col items-center">
     <h1>Contact Me</h1>
-
-    {% include 'contact/partials/contact_form.html' %}
-
+    <div class="pw-card">
+      <form class="pw-form" action="{% url 'contact:index' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <div class="pw-form-actions">
+          <button class="pw-button fluid primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 {% endblock %}

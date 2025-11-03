@@ -5,17 +5,11 @@
 {% block title_suffix %}| Projects{% endblock %}
 {% block content %}
   <h1>Projects</h1>
-  {% for project in projects %}
-    <article>
-      <header>
-        <a href="{% url 'projects:detail' project.slug %}">
-          <h3>{{ project.name }}</h3>
-        </a>
-        <div class="badge-list">
-          {% for technology in project.technologies.all %}<div class="badge">{{ technology.name }}</div>{% endfor %}
-        </div>
-      </header>
-      <p>{{ project.description | unmarkdown | truncatewords:60 }}</p>
-    </article>
-  {% endfor %}
+  <div class="flex flex-col gap-4">
+    {% for project in projects %}
+
+      {% include 'projects/partials/project_card.html' %}
+
+    {% endfor %}
+  </div>
 {% endblock %}

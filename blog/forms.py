@@ -6,6 +6,8 @@ from .models import Topic
 
 
 class BlogSearchForm(forms.Form):
+    template_name = "blog/partials/blog_search_form.html"
+
     search = forms.CharField(
         max_length=255,
         required=False,

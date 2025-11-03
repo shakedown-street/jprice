@@ -10,16 +10,21 @@
   <script src="{% static 'utils/prism.js' %}"></script>
 {% endblock %}
 {% block content %}
+  <a class="block mb-4" href="{% url 'blog:index' %}">&larr; Back to blog</a>
   {% if not post.is_published %}
-    <div class="callout callout-warning" style="margin: 2rem 0;">
-      <p>This post has not been published yet.</p>
+    <div class="pw-callout mb-4">
+      <p class="my-0">This post has not been published yet.</p>
     </div>
   {% endif %}
-  <a href="{% url 'blog:index' %}">&larr; Back to blog</a>
-  <h1>{{ post.title }}</h1>
-  <p>{{ post.published_at | date:"M d, Y" }}</p>
-  <div class="badge-list">
-    {% for topic in post.topics.all %}<div class="badge">{{ topic.name }}</div>{% endfor %}
-  </div>
-  {{ post.content | markdown }}
+  <article>
+    <header>
+      <h1>{{ post.title }}</h1>
+      <p class="text-sm text-muted">{{ post.published_at | date:"M d, Y" }}</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        {% for topic in post.topics.all %}<div class="pw-badge rounded">{{ topic.name }}</div>{% endfor %}
+      </div>
+    </header>
+    <hr />
+    {{ post.content | markdown }}
+  </article>
 {% endblock %}
