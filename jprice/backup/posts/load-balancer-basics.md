@@ -40,8 +40,8 @@ To scale a load balanced system, you can add more servers to the pool, or scale 
 
 ## Scenario
 
-- We will have two backend web servers running the application (such as a django backend)
-- We will use Nginx as a reverse proxy to distribute traffic between the two servers
+- We will have two backend web servers running the application (such as a [Django](https://djangoproject.com/) backend)
+- We will use [Nginx](https://nginx.org/) as a reverse proxy to distribute traffic between the two servers
 - We will use Round Robin as the load balancing algorithm to distribute traffic evenly between the two servers
 
 You will need to configure Nginx as a load balancer:
@@ -96,40 +96,23 @@ Now, making a request to the nginx server's IP will distribute the traffic betwe
 
 ## Architecture
 
-In the above scenario, both backend servers would be running the same code, and connecting to the same database server. Ideally the database should be hosted on a separate dedicated server so that it can be scaled independently from the backend servers as well. This could be an additional droplet or a service such as DigitalOcean's Managed Databases or RDS in AWS. Database servers can have their own scaling strategies such as read replicas, sharding, or vertical scaling which we probably won't get into here.
+In the above scenario, both backend servers would be running the same code, and connecting to the same database server. Ideally the database should be hosted on a separate dedicated server so that it can be scaled independently from the backend servers as well. This could be an additional server or a service such as DigitalOcean's Managed Databases or RDS in AWS. Database servers can have their own scaling strategies such as read replicas, sharding, or vertical scaling which we won't get into here.
 
 ```less
        Client
           |
    [Load Balancer]
-       /          \
-  [Droplet]  [Droplet]
-    (App)        (App)
-      |            |
+       /        \
+  [Backend]  [Backend]
+      |          |
     [Database Server]
 ```
 
 ---
 
-One of the benefits of scaling out this way is that each server can be scaled independently. If you get more traffic to the web application, you can add more backend droplets. If you need more database capacity, you can scale the database server. This allows you to scale the system as needed and optimize costs based on the specific needs of each component.
+One of the benefits of scaling out this way is that each server can be scaled independently. If you get more traffic to the web application, you can add more backend servers. If you need more database capacity, you can scale the database server. This allows you to scale the system as needed and optimize costs based on the specific needs of each component.
 
-Backend servers should typically have similar specs to ensure that they can handle the same amount of traffic. If one server is more powerful than the other, it may become a bottleneck. A load balancer server can typically be more lightweight compared to the backend droplets because it's just routing traffic and not processing the application logic. The database server will likely need to be the most powerful server in the stack.
-
----
-
-## Cost Considerations
-
-This next part isn't an exact science, but here's a rough idea of how you might calculate the cost of a setup like this.
-
-Lets say we're not using a managed DB and it's just on it's own droplet. Lets also say that our hosting company offers 4 droplet sizes at the following costs: $5, $10, $15, and $20 per month.
-
-A basic setup could look like this:
-
-- Load Balancer: $5-$10 droplet — Small and lightweight, good for distributing traffic.
-- Backend Servers: $10-$15 per droplet — Sufficient for running your Django app under moderate traffic.
-- Database Server: $15-$20 droplet — Good for running a database with decent resources (memory, CPU, I/O).
-
-Of course, in the real world you would need to adjust based on monitoring resource usage.
+Backend servers should typically have similar specs to ensure that they can handle the same amount of traffic. If one server is more powerful than the other, it may become a bottleneck. A load balancer server can typically be more lightweight compared to the backend servers because it's just routing traffic and not processing the application logic. The database server will likely need to be the most powerful server in the stack.
 
 ---
 
@@ -151,4 +134,4 @@ When should you consider load balancing?
 
 ## Summary
 
-Load balancing is a powerful technique for scaling web applications horizontally. By distributing traffic across multiple backend servers, you can improve performance, ensure high availability, and handle increased load effectively. Nginx is a popular choice for implementing load balancing due to its flexibility and ease of use. When designing a load balanced architecture, consider the specific needs of your application, including traffic patterns, resource requirements, and cost considerations.
+Load balancing is a powerful technique for scaling web applications horizontally. By distributing traffic across multiple backend servers, you can improve performance, ensure high availability, and handle increased load effectively. When designing a load balanced architecture, consider the specific needs of your application, including traffic patterns, resource requirements, and cost considerations.

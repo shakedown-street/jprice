@@ -26,11 +26,7 @@ class ProjectManager(models.Manager):
         )
 
     def featured(self):
-        return self.published().filter(
-            published_at__isnull=False,
-            published_at__lte=timezone.now(),
-            is_featured=True,
-        )
+        return self.published().filter(is_featured=True)
 
 
 class Project(TimestampMixin):

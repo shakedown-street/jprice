@@ -1,6 +1,6 @@
 ## Overview
 
-PunkwebBB is an open source (BSD-3 Clause) bulletin board system for Django. It is ideal for a wide variety of online communities and discussion platforms. I developed it to provide a simple and customizable forum solution for Django applications. Whether you're building a niche interest group or a large scale community, PunkwebBB offers the flexibility and features needed to support engaging discussions.
+PunkwebBB is an open source (BSD-3 Clause) bulletin board system for [Django](https://www.djangoproject.com/). It is ideal for a wide variety of online communities and discussion platforms. I developed it to provide a simple and customizable forum solution for Django applications. Whether you're building a niche interest group or a large scale community, PunkwebBB offers the flexibility and features needed to support engaging discussions.
 
 ---
 
@@ -43,7 +43,7 @@ I built PunkwebBB because I wanted to a Django forum solution that was truly sta
 ## Technical Highlights
 
 - Created custom BBCode and Markdown parsers provide a true WYSIWYG editing experience
-- Leveraged HTMX for real time shoutbox and client side interactivity without heavy frontend frameworks
+- Leveraged [HTMX](https://htmx.org/) for real time shoutbox and client side interactivity without heavy frontend frameworks
 - Developed a middleware to track user presence for online member and guest counts
 - Fully custom UI that birthed the creation of the [Punkweb/punkweb-ui](https://github.com/Punkweb/punkweb-ui) CSS framework
 - Full test coverage for logic and views
@@ -58,4 +58,4 @@ While PunkwebBB has not yet seen widespread adoption, it has received interest f
 
 ## Lessons Learned
 
-I learned a lot about building reusable Django apps through this project. Keeping the app truly standalone required careful consideration of dependencies and architecture. I also gained experience with the Django permissions framework. Leveraging HTMX allowed me to add interactivity without the complexity of a full frontend framework, which was a valuable lesson in simplicity. Overall, PunkwebBB reinforced the importance of clear documentation and ease of use when creating open-source software.
+I learned a lot about building reusable Django apps through this project. Keeping the app truly standalone required careful consideration of dependencies and architecture. I also gained experience with the Django permissions framework. Leveraging HTMX allowed me to add interactivity without the complexity of a full frontend framework, which was a valuable lesson in simplicity. Overall, building PunkwebBB improved my skills in Django development and open source project management.

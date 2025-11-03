@@ -1,4 +1,4 @@
-This post covers how to build a minimal markdown rendering solution in Django using the [Markdown](https://pypi.org/project/Markdown/) package, along with syntax highlighting using Prism.js and a CodeMirror field widget for editing markdown content. We will be building the exact solution used on this site for blog posts and project pages.
+This post covers how to build a minimal markdown rendering solution in [Django](https://djangoproject.com/) using the [Markdown](https://pypi.org/project/Markdown/) package, along with syntax highlighting using [Prism.js](https://prismjs.com/) and a [CodeMirror](https://codemirror.net/5/) field widget for editing markdown content. We will be building the exact solution used on this site for blog posts and project pages.
 
 In this post, I will assume you have a working Django project and app already set up, and have basic understanding of Django models, forms, templates, static files, and template tags.
 
@@ -6,7 +6,7 @@ In this post, I will assume you have a working Django project and app already se
 
 ## Background / Concepts
 
-Markdown is a lightweight markup language that allows you to write formatted text. It is widely used for writing documentation, blog posts, and other content on the web due to its simplicity and readability. While there are several third-party Django apps available for rendering markdown in Django projects, building your own solution can be beneficial to keep your implementation lightweight and customizable.
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight markup language that allows you to write formatted text. It is widely used for writing documentation, blog posts, and other content on the web due to its simplicity and readability. While there are several third-party Django apps available for rendering markdown in Django projects, building your own solution can be beneficial to keep your implementation lightweight and customizable.
 
 To implement markdown rendering in Django we will wrap the `markdown` Python package functionality in a template tag filter. This allows us to convert markdown content stored in our database into HTML when rendering templates. When storing content in a database model, we will store it in a plain old `TextField`. Additionally, we will enhance the user experience by adding syntax highlighting for code blocks using [Prism.js](https://prismjs.com/) and a [CodeMirror](https://codemirror.net/5/) widget for editing markdown content in forms.
 
@@ -92,7 +92,7 @@ You could put this in your base template so it's available site-wide, but I like
 
 **Note**: This section assumes you have jQuery available in your admin or form pages. If you don't, you can modify the JS code to use vanilla JS or another library of your choice.
 
-How you want to edit markdown content on your site is up to you. You could use the regular `TextField` widget, or a third-party WYSIWYG editor, but I like to use CodeMirror for a nice code-editor-like experience.
+How you want to edit markdown content on your site is up to you. You could use the regular `TextField` widget, or a third-party WYSIWYG editor, but I like to use CodeMirror for a code editor experience.
 
 In the same Django app that you put the template tag, create a new file called `widgets.py`.
 
