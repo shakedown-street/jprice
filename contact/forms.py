@@ -18,7 +18,7 @@ class ContactForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(attrs={"class": "fluid"}),
             "email": forms.EmailInput(attrs={"class": "fluid"}),
-            "message": forms.Textarea(attrs={"class": "resize-y"}),
+            "message": forms.Textarea(attrs={"class": "resize-y", "cols": 30}),
         }
 
 
