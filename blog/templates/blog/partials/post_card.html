@@ -10,5 +10,5 @@
       {% for topic in post.topics.all %}<div class="pw-badge xs rounded">{{ topic.name }}</div>{% endfor %}
     </div>
   </header>
-  <p class="mb-0">{{ post.content | unmarkdown | truncatewords:60 }}</p>
+  <p class="mb-0">{{ post.content | unmarkdown | truncatewords:40 }}</p>
 </article>
