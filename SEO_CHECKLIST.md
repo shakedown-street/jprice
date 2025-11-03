@@ -18,7 +18,7 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 - [x] **Favicon & Manifest** — All major variants (ICO, PNG, Apple Touch, Android, manifest.json)
 - [x] **Structured Data (JSON-LD)**
   - [x] `Person` or `Organization`
-  - [] `Article` for blog posts
+  - [ ] `Article` for blog posts
   - [ ] `BreadcrumbList`
 
 ---
@@ -30,7 +30,7 @@ A pre-launch checklist for ensuring strong technical and on-page SEO.
 - [x] **Alt text** on all meaningful images
 - [x] **Internal linking** between blog posts, case studies, and main pages
 - [x] **Readable URLs** — lowercase, hyphen-separated, no query junk
-- [ ] **Initial content** — at least 3 case studies + 3 blog posts live
+- [x] **Initial content** — at least 3 case studies + 3 blog posts live
 
 ---
 

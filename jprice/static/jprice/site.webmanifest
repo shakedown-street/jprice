@@ -1,5 +1,5 @@
 {
-  "name": "Jordan Price Portfolio",
+  "name": "Jordan Price",
   "short_name": "Jordan Price",
   "icons": [
     {
@@ -9,8 +9,8 @@
     },
     { "src": "https://djangoweb.dev/static/jprice/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
   ],
-  "theme_color": "#5ee9b5",
-  "background_color": "#101828",
+  "theme_color": "#6ee7b7",
+  "background_color": "#111827",
   "display": "standalone",
   "start_url": "/"
 }
