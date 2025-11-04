@@ -1,12 +1,16 @@
 {% extends 'jprice/base.html' %}
 
-{% load static %}
+{% load static compress %}
 
 {% block extra_head %}
-  <link rel="stylesheet" href="{% static 'utils/prism-duotone-sea.css' %}" />
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'utils/prism-duotone-sea.css' %}" />
+  {% endcompress %}
 {% endblock %}
 {% block extra_script %}
-  <script src="{% static 'utils/prism.js' %}"></script>
+  {% compress js %}
+    <script src="{% static 'utils/prism.js' %}"></script>
+  {% endcompress %}
 {% endblock %}
 {% block content %}
   <h1 id="headings">Headings</h1>
@@ -223,7 +227,7 @@ for (i = 0; i < divs.length; ++i) {
   <hr />
   <h1 id="tables">Tables</h1>
   <div class="pw-table-container">
-    <table class="pw-table">
+    <table>
       <caption>This is a table caption</caption>
       <thead>
         <tr>

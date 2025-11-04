@@ -1,12 +1,16 @@
 {% extends 'jprice/base.html' %}
 
-{% load markdown static %}
+{% load static compress markdown %}
 
 {% block extra_head %}
-  <link rel="stylesheet" href="{% static 'utils/prism-duotone-sea.css' %}" />
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'utils/prism-duotone-sea.css' %}" />
+  {% endcompress %}
 {% endblock %}
 {% block extra_script %}
-  <script src="{% static 'utils/prism.js' %}"></script>
+  {% compress js %}
+    <script src="{% static 'utils/prism.js' %}"></script>
+  {% endcompress %}
 {% endblock %}
 {% block content %}
   <a class="block mb-4" href="{% url 'projects:index' %}">&larr; Back to projects</a>

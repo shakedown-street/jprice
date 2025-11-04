@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
+    # Third party apps
+    "compressor",
     "captcha",
     "insight",
+    # Local apps
     "blog",
     "contact",
     "projects",
@@ -131,6 +134,11 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "dev" / "static"
 STATICFILES_DIRS = [BASE_DIR / "jprice" / "static"]
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+]
 
 # Media files
 
