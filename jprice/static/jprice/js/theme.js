@@ -6,7 +6,7 @@
     dark: '&#9728', // sun
   };
 
-  var savedTheme = localStorage.getItem('theme');
+  var savedTheme = localStorage.getItem('pw-theme');
   if (savedTheme) {
     html.setAttribute('data-theme', savedTheme);
     themeToggle.innerHTML = character[savedTheme === 'dark' ? 'dark' : 'light'];
@@ -18,7 +18,7 @@
       var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
       themeToggle.innerHTML = character[newTheme === 'dark' ? 'dark' : 'light'];
-      localStorage.setItem('theme', newTheme);
+      localStorage.setItem('pw-theme', newTheme);
     });
   }
 })();
