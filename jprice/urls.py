@@ -34,7 +34,7 @@ urlpatterns = [
     path("styleguide/", styleguide),
     path("site-admin/", admin.site.urls),
     path("captcha/", include("captcha.urls")),
-    path("insight/", include("punkweb_insight.urls")),
+    path("insight/", include("insight.urls")),
     path(
         "sitemap.xml",
         sitemap,

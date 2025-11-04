@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
     "captcha",
-    "punkweb_insight",
+    "insight",
     "blog",
     "contact",
     "projects",
@@ -58,7 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "punkweb_insight.middleware.InsightMiddleware",
+    "insight.middleware.InsightMiddleware",
 ]
 
 ROOT_URLCONF = "jprice.urls"
@@ -153,6 +153,23 @@ CSRF_TRUSTED_ORIGINS = os.environ.get(
 
 
 # Custom settings
+
+INSIGHT_EXCLUDE_PATHS = [
+    r"^/static/",
+    r"^/media/",
+    r"^/.well-known/",
+    r"^/favicon(\..+)?$",
+    r"^/apple-touch-icon(\..+)?$",
+    r"^/android-chrome(\..+)?$",
+    r"^/robots\.txt$",
+    r"^/humans\.txt$",
+    r"^/sitemap\.xml$",
+    r"^/manifest\.json$",
+    r"^/site.webmanifest$",
+    r"^/service-worker\.js$",
+    # Add more paths as needed
+    r"^/captcha/",
+]
 
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
