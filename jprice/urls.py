@@ -32,7 +32,7 @@ urlpatterns = [
     path("projects/", include("projects.urls")),
     path("resume/", include("resume.urls")),
     path("styleguide/", styleguide),
-    path("admin/", admin.site.urls),
+    path("site-admin/", admin.site.urls),
     path("captcha/", include("captcha.urls")),
     path("insight/", include("punkweb_insight.urls")),
     path(
