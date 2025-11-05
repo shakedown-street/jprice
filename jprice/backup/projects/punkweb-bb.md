@@ -13,7 +13,7 @@ PunkwebBB is an open source (BSD-3 Clause) bulletin board system for [Django](ht
 - Simple to configure and extend
 - Support BBCode and Markdown formatting
 - Have a modern, responsive UI with client side interactivity such as modals
-- Standalone - do not require adding any other `INSTALLED_APP`s
+- Standalone - do not require adding any other `INSTALLED_APPS`
 
 **Challenges:**
 

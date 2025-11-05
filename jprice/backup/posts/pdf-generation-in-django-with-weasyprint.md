@@ -51,7 +51,6 @@ def pdf_response(request, template, *args, **kwargs):
     response["Content-Disposition"] = '{}; filename="{}"'.format(disposition, filename)
 
     return response
-
 ```
 
 This view function takes a request, a template name, and optional context data. It renders the template to HTML, converts it to a PDF using WeasyPrint, and returns it as an HTTP response with the appropriate content type. You can specify the filename and whether the PDF should be displayed inline in the browser or downloaded as an attachment.
