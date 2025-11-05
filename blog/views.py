@@ -40,7 +40,6 @@ def index(request):
 
 
 def detail(request, slug):
-
     post = get_object_or_404(Post, slug=slug)
 
     if not request.user.is_staff and not post.is_published:
