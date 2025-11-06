@@ -3,10 +3,10 @@
 <article class="pw-card">
   <header>
     <a href="{% url 'blog:detail' post.slug %}">
-      <h4>{{ post.title }}</h4>
+      <h4 class="mt-0 mb-1">{{ post.title }}</h4>
     </a>
-    <p class="text-sm text-muted">{{ post.published_at | date:"M d, Y" }}</p>
-    <div class="flex flex-wrap gap-1 mb-4">
+    <p class="text-sm text-muted my-0">{{ post.published_at | date:"M d, Y" }}</p>
+    <div class="flex flex-wrap gap-1 my-4">
       {% for topic in post.topics.all %}<div class="pw-badge xs rounded">{{ topic.name }}</div>{% endfor %}
     </div>
   </header>

@@ -13,17 +13,13 @@
   {% endcompress %}
 {% endblock %}
 {% block content %}
-  <a class="block mb-4" href="{% url 'blog:index' %}">&larr; Back to blog</a>
-  {% if not post.is_published %}
-    <div class="pw-callout mb-4">
-      <p class="my-0">This post has not been published yet.</p>
-    </div>
-  {% endif %}
+  <a class="block my-6" href="{% url 'blog:index' %}">&larr; Back to blog</a>
+  {% if not post.is_published %}<div class="pw-callout mb-6">This post has not been published yet.</div>{% endif %}
   <article>
     <header>
-      <h1>{{ post.title }}</h1>
+      <h1 class="mb-0">{{ post.title }}</h1>
       <p class="text-sm text-muted">{{ post.published_at | date:"M d, Y" }}</p>
-      <div class="flex flex-wrap gap-2 mb-4">
+      <div class="flex flex-wrap gap-2">
         {% for topic in post.topics.all %}<div class="pw-badge rounded">{{ topic.name }}</div>{% endfor %}
       </div>
     </header>

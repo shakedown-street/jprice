@@ -13,24 +13,22 @@
   {% endcompress %}
 {% endblock %}
 {% block content %}
-  <a class="block mb-4" href="{% url 'projects:index' %}">&larr; Back to projects</a>
+  <a class="block my-6" href="{% url 'projects:index' %}">&larr; Back to projects</a>
   {% if not project.is_published %}
-    <div class="pw-callout mb-4">
-      <p class="my-0">This project has not been published yet.</p>
-    </div>
+    <div class="pw-callout mb-6">This project has not been published yet.</div>
   {% endif %}
   <article>
     <header>
       <h1>{{ project.name }}</h1>
-      <div class="flex flex-wrap gap-2 mb-4">
+      <div class="flex flex-wrap gap-2">
         {% for technology in project.technologies.all %}<div class="pw-badge rounded">{{ technology.name }}</div>{% endfor %}
       </div>
-      <div>
+      <p>
         <strong>Type:</strong> {{ project.type }}
-      </div>
-      <div>
+      </p>
+      <p>
         <strong>Links:</strong>
-      </div>
+      </p>
       <nav>
         <ul>
           {% if project.github_url %}
