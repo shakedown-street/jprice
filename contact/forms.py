@@ -1,4 +1,4 @@
-from captcha.fields import CaptchaField
+from captcha.fields import CaptchaField, CaptchaTextInput
 from django import forms
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -9,7 +9,10 @@ from .models import Contact
 class ContactForm(forms.ModelForm):
     # Honeypot field
     website_url = forms.CharField(required=False, widget=forms.HiddenInput)
-    captcha = CaptchaField()
+    captcha = CaptchaField(
+        help_text="Please complete the CAPTCHA to prove you're human.",
+        widget=CaptchaTextInput(attrs={"class": "fluid"}),
+    )
 
     template_name = "contact/partials/contact_form.html"
 
