@@ -13,6 +13,18 @@
       efficient solutions that deliver real impact without wasted effort.
     </p>
   </section>
+  {% if testimonials %}
+    <section class="mb-8">
+      <h2>Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for testimonial in testimonials %}
+
+          {% include 'projects/partials/testimonial_card.html' %}
+
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
   <section class="mb-8">
     <h2>Skills</h2>
     <div class="flex flex-wrap gap-2">

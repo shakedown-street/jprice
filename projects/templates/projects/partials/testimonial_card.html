@@ -1,0 +1,17 @@
+<article class="pw-card">
+  <header>
+    <div class="flex items-center gap-4">
+      <div class="pw-avatar sm">
+        <img class="pw-avatar-image"
+             src="{{ testimonial.author_image.url }}"
+             alt="{{ testimonial.author_name }}" />
+      </div>
+      <div>
+        <h4 class="my-0">{{ testimonial.author_name }}</h4>
+        <p class="my-0 text-sm text-muted-foreground">{{ testimonial.author_title }}</p>
+        <p class="my-0 text-sm text-muted-foreground">{{ testimonial.relationship }}</p>
+      </div>
+    </div>
+  </header>
+  <p class="mb-0 text-pre-wrap">{{ testimonial.content }}</p>
+</article>

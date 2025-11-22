@@ -4,10 +4,11 @@ from django.utils import timezone
 
 from blog.models import Post
 from contact.forms import handle_contact_form
-from projects.models import Project, Technology
+from projects.models import Project, Technology, Testimonial
 
 
 def index(request):
+    featured_testimonials = Testimonial.objects.featured()
     featured_projects = Project.objects.featured()
     latest_posts = Post.objects.published()[:3]
     technologies = Technology.objects.all()
@@ -20,6 +21,7 @@ def index(request):
         request,
         "jprice/index.html",
         {
+            "testimonials": featured_testimonials,
             "projects": featured_projects,
             "posts": latest_posts,
             "technologies": technologies,

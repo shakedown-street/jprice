@@ -3,7 +3,23 @@ from django.contrib import admin
 
 from utils.widgets import MarkdownEditor
 
-from .models import Project, Technology
+from .models import Project, Technology, Testimonial
+
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = (
+        "author_name",
+        "author_title",
+        "project",
+        "published_at",
+        "is_featured",
+    )
+    list_filter = (
+        "published_at",
+        "is_featured",
+    )
+    search_fields = ("author_name", "content")
 
 
 @admin.register(Technology)

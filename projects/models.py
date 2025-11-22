@@ -5,6 +5,42 @@ from django.utils import timezone
 from jprice.mixins import TimestampMixin
 
 
+class TestimonialManager(models.Manager):
+    def published(self):
+        return self.filter(
+            published_at__isnull=False,
+            published_at__lte=timezone.now(),
+        )
+
+    def featured(self):
+        return self.published().filter(is_featured=True)
+
+
+class Testimonial(TimestampMixin):
+    author_name = models.CharField(max_length=255)
+    author_title = models.CharField(max_length=255, blank=True)
+    author_image = models.ImageField(upload_to="testimonials/", blank=True, null=True)
+    relationship = models.CharField(max_length=255, blank=True)
+    project = models.ForeignKey(
+        "Project",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="testimonials",
+    )
+    content = models.TextField()
+    published_at = models.DateTimeField(blank=True, null=True)
+    is_featured = models.BooleanField(default=False)
+
+    objects = TestimonialManager()
+
+    class Meta:
+        ordering = ("-published_at",)
+
+    def __str__(self):
+        return self.author_name
+
+
 class Technology(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
