@@ -24,6 +24,7 @@ def index(request):
 
 def detail(request, slug):
     project = get_object_or_404(Project, slug=slug)
+    testimonials = project.testimonials.published()
 
     if not request.user.is_staff and not project.is_published:
         raise Http404("No Project matches the given query.")
@@ -35,5 +36,6 @@ def detail(request, slug):
         "title": title,
         "description": description,
         "project": project,
+        "testimonials": testimonials,
     }
     return render(request, "projects/detail.html", context)

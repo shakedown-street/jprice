@@ -95,7 +95,7 @@
                src="{% static 'jprice/logo.png' %}"
                alt="Jordan Price Logo" />
         </a>
-        <nav class="nav-links ml-4 desktop-only">
+        <nav class="nav-links desktop-only ml-4">
           <a href="{% url 'projects:index' %}"
              {% if current_view == 'projects:index' or current_view == 'projects:detail' %}data-active{% endif %}>Projects</a>
           <a href="{% url 'blog:index' %}"
@@ -109,8 +109,8 @@
           <a href="https://www.linkedin.com/in/pork/" target="_blank">LinkedIn</a>
           <a href="{% url 'resume:resume_pdf' %}" target="_blank">Resume</a>
         </nav>
-        <button class="nav-button" id="theme-toggle">&#9728;</button>
-        <button class="nav-button mobile-only" id="menu-toggle">&#9776;</button>
+        <button class="pw-button icon" id="theme-toggle">&#9728;</button>
+        <button class="pw-button icon mobile-only" id="menu-toggle">&#9776;</button>
         <div class="menu-popover mobile-only" id="menu-popover">
           <nav class="menu-links">
             <a href="{% url 'projects:index' %}"

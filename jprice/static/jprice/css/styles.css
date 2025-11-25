@@ -31,11 +31,6 @@ main {
   padding-inline-start: 1rem;
 }
 
-/* Add more padding to default pw-form-group */
-.pw-form-group {
-  gap: 0.5rem;
-}
-
 /* Navbar styles */
 
 .nav {
@@ -77,21 +72,6 @@ main {
   background-color: var(--muted);
 }
 
-.nav-button {
-  align-items: center;
-  background-color: unset;
-  border: none;
-  color: var(--foreground);
-  display: flex;
-  height: 2rem;
-  justify-content: center;
-  width: 2rem;
-}
-
-.nav-button:hover {
-  background-color: var(--muted);
-}
-
 .menu-popover {
   background-color: var(--background);
   border: var(--border-width) solid var(--border);
@@ -129,12 +109,12 @@ main {
 
 @media (max-width: 767px) {
   .desktop-only {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 768px) {
   .mobile-only {
-    display: none;
+    display: none !important;
   }
 }
 
