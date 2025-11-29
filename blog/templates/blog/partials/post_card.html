@@ -7,7 +7,7 @@
     </a>
     <p class="text-sm text-muted my-0">{{ post.published_at | date:"M d, Y" }}</p>
     <div class="flex flex-wrap gap-1 my-4">
-      {% for topic in post.topics.all %}<div class="pw-badge xs rounded-3xl">{{ topic.name }}</div>{% endfor %}
+      {% for topic in post.topics.all %}<div class="pw-badge xs">{{ topic.name }}</div>{% endfor %}
     </div>
   </header>
   <p class="mb-0">{{ post.content | unmarkdown | truncatewords:30 }}</p>

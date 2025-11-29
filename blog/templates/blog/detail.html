@@ -20,7 +20,7 @@
       <h1 class="mb-0">{{ post.title }}</h1>
       <p class="text-sm text-muted">{{ post.published_at | date:"M d, Y" }}</p>
       <div class="flex flex-wrap gap-2">
-        {% for topic in post.topics.all %}<div class="pw-badge rounded-3xl">{{ topic.name }}</div>{% endfor %}
+        {% for topic in post.topics.all %}<div class="pw-badge">{{ topic.name }}</div>{% endfor %}
       </div>
     </header>
     <hr />

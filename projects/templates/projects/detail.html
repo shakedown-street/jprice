@@ -32,9 +32,7 @@
     <header>
       <h1>{{ project.name }}</h1>
       <div class="flex flex-wrap gap-2">
-        {% for technology in project.technologies.all %}
-          <div class="pw-badge rounded-3xl">{{ technology.name }}</div>
-        {% endfor %}
+        {% for technology in project.technologies.all %}<div class="pw-badge">{{ technology.name }}</div>{% endfor %}
       </div>
       <p>
         <strong>Type:</strong> {{ project.type }}
