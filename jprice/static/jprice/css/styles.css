@@ -57,8 +57,7 @@ main {
   gap: 0.5rem;
 }
 
-.nav-links a,
-.nav-links a:visited {
+.nav-links a {
   border-radius: 0.25rem;
   color: var(--foreground);
   font-size: 0.875rem;

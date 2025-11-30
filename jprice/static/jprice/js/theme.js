@@ -8,26 +8,39 @@
   }
 })();
 
+function setButtonIcon(theme) {
+  var themeToggle = document.getElementById('theme-toggle');
+  var iconTemplateId = {
+    light: 'moon-icon',
+    dark: 'sun-icon',
+  };
+  if (themeToggle) {
+    const iconTemplate = document.getElementById(iconTemplateId[theme === 'dark' ? 'dark' : 'light']);
+    const clone = iconTemplate.content.cloneNode(true);
+    themeToggle.innerHTML = '';
+    themeToggle.appendChild(clone);
+  }
+}
+
 // After DOM is loaded, set the toggle button character and register event listener
 document.addEventListener('DOMContentLoaded', function () {
   var html = document.documentElement;
   var themeToggle = document.getElementById('theme-toggle');
   var savedTheme = localStorage.getItem('pw-theme');
-  var character = {
-    light: '&#9790', // moon
-    dark: '&#9728;', // sun
-  };
 
   if (themeToggle) {
     if (savedTheme) {
-      themeToggle.innerHTML = character[savedTheme === 'dark' ? 'dark' : 'light'];
+      setButtonIcon(savedTheme);
+    } else {
+      var currentTheme = html.getAttribute('data-theme') || 'dark';
+      setButtonIcon(currentTheme);
     }
 
     themeToggle.addEventListener('click', function () {
       var currentTheme = html.getAttribute('data-theme');
       var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
-      themeToggle.innerHTML = character[newTheme === 'dark' ? 'dark' : 'light'];
+      setButtonIcon(newTheme);
       localStorage.setItem('pw-theme', newTheme);
     });
   }
