@@ -11,7 +11,7 @@ class ContactForm(forms.ModelForm):
     website_url = forms.CharField(required=False, widget=forms.HiddenInput)
     captcha = CaptchaField(
         help_text="Please complete the CAPTCHA to prove you're human.",
-        widget=CaptchaTextInput(attrs={"class": "fluid"}),
+        widget=CaptchaTextInput(attrs={"class": "w-full"}),
     )
 
     template_name = "contact/partials/contact_form.html"
@@ -24,9 +24,9 @@ class ContactForm(forms.ModelForm):
             "message",
         )
         widgets = {
-            "name": forms.TextInput(attrs={"class": "fluid"}),
-            "email": forms.EmailInput(attrs={"class": "fluid"}),
-            "message": forms.Textarea(attrs={"class": "resize-y fluid"}),
+            "name": forms.TextInput(attrs={"class": "w-full"}),
+            "email": forms.EmailInput(attrs={"class": "w-full"}),
+            "message": forms.Textarea(attrs={"class": "w-full resize-y"}),
         }
 
     def clean_website_url(self):
