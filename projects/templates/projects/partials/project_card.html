@@ -2,9 +2,8 @@
 
 <article class="pw-card">
   <header>
-    <a href="{% url 'projects:detail' project.slug %}">
-      <h4 class="my-0">{{ project.name }}</h4>
-    </a>
+    <a class="block mb-1 font-bold"
+       href="{% url 'projects:detail' project.slug %}">{{ project.name }}</a>
     <div class="flex flex-wrap gap-1 my-4">
       {% for technology in project.technologies.all %}<div class="pw-badge xs">{{ technology.name }}</div>{% endfor %}
     </div>

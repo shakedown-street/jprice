@@ -5,13 +5,19 @@
 {% block content %}
   <section class="mb-8">
     <h1>Jordan Price</h1>
-    <h3>Software & Web Developer</h3>
-    <p>
-      I'm a senior full stack developer specializing in Django and React.
-      I thrive in fast moving studio and startup environments where I can take projects from concept to deployment.
-      I combine strong technical skills with solid business insight to build scalable,
-      efficient solutions that deliver real impact without wasted effort.
+    <h2>Senior Software Engineer</h2>
+    <p class="text-lg">
+      I'm a software engineer with a decade of experience helping startups turn ideas into real world products.
+      I excel at taking something complicated and shaping it into something clear, useful, and easy to work with.
+      I communicate well with clients, keep projects aligned with their core value, and lead teams toward solutions that actually matter.
+      I love building software that delivers real value to businesses and users without wasted effort and unnecessary complexity.
     </p>
+  </section>
+  <section class="mb-8">
+    <h2>Skills</h2>
+    <div class="flex flex-wrap gap-2">
+      {% for technology in technologies %}<div class="pw-badge">{{ technology.name }}</div>{% endfor %}
+    </div>
   </section>
   {% if testimonials %}
     <section class="mb-8">
@@ -25,12 +31,6 @@
       </div>
     </section>
   {% endif %}
-  <section class="mb-8">
-    <h2>Skills</h2>
-    <div class="flex flex-wrap gap-2">
-      {% for technology in technologies %}<div class="pw-badge">{{ technology.name }}</div>{% endfor %}
-    </div>
-  </section>
   <section class="mb-8">
     <h2>Projects</h2>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
